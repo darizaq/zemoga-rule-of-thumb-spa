@@ -12,7 +12,8 @@
     "build:ssr": "npm run build && ng run zemoga-rule-of-thumb-spa:server:production",
     "serve:ssr": "node dist/zemoga-rule-of-thumb-spa/server/main.js",
     "prerender": "ng run zemoga-rule-of-thumb-spa:prerender",
-    "e2e": "tsc --project e2e/tsconfig.json && nightwatch"
+    "e2e": "tsc --project e2e/tsconfig.json && nightwatch",
+    "build:docker": "npm run build:ssr && docker build . -t darizaq/zemoga-rule-of-thumb-spa"
   },
   "private": true,
   "author": "Danilo Ariza",
