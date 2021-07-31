@@ -7,7 +7,11 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --code-coverage",
-    "test:watch": "ng test --watch=true --code-coverage"
+    "test:watch": "ng test --watch=true --code-coverage",
+    "dev:ssr": "ng run zemoga-rule-of-thumb-spa:serve-ssr",
+    "build:ssr": "npm run build && ng run zemoga-rule-of-thumb-spa:server:production",
+    "serve:ssr": "node dist/zemoga-rule-of-thumb-spa/server/main.js",
+    "prerender": "ng run zemoga-rule-of-thumb-spa:prerender"
   },
   "private": true,
   "author": "Danilo Ariza",
@@ -26,7 +30,12 @@
     "@angular/forms": "12.1.1",
     "@angular/platform-browser": "12.1.1",
     "@angular/platform-browser-dynamic": "12.1.1",
+    "@angular/platform-server": "12.1.1",
     "@angular/router": "12.1.1",
+    "@nguniversal/builders": "12.1.0",
+    "@nguniversal/express-engine": "12.1.0",
+    "@types/express": "4.17.13",
+    "express": "4.17.1",
     "rxjs": "6.6.0",
     "tslib": "2.2.0",
     "zone.js": "0.11.4"
