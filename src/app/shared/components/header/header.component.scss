@@ -1,0 +1,136 @@
+@import 'abstracts';
+
+.hero {
+  height: 80vw;
+  margin-bottom: 2rem;
+  max-height: 38rem;
+  min-height: 35rem;
+  overflow: hidden;
+  position: relative;
+
+  &__background {
+    height: 100%;
+    left: -35vw;
+    object-fit: cover;
+    position: absolute;
+    width: 160vw;
+  }
+
+  &__featured-card {
+    left: 1rem;
+    max-height: 25rem;
+    overflow: hidden;
+    position: relative;
+    top: 5.5rem;
+    width: 55vw;
+  }
+
+  &__closing-gauge {
+    background-color: var(--color-header-closing-gauge-background);
+    bottom: 0;
+    display: flex;
+    height: 3rem;
+    position: absolute;
+    width: 100%;
+  }
+
+  .closing-gauge {
+    &__left {
+      align-items: center;
+      background-color: var(--color-header-closing-gauge-left-background);
+      color: var(--color-header-closing-gauge-left);
+      display: flex;
+      font-weight: 300;
+      justify-content: flex-end;
+      padding: 0 0.25rem 0 0;
+      position: relative;
+      text-transform: uppercase;
+      width: 30%;
+
+      &::after {
+        border-bottom: 0.25rem solid transparent;
+        border-left: 0.5rem solid var(--color-header-closing-gauge-left-arrow);
+        border-top: 0.25rem solid transparent;
+        content: ' ';
+        display: block;
+        height: 0;
+        position: absolute;
+        right: -0.5rem;
+        width: 0;
+      }
+    }
+
+    &__right {
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 0 0 0.75rem;
+    }
+
+    &__number {
+      color: var(--color-header-closing-gauge-left-number);
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+    &__desc {
+      color: var(--color-header-closing-gauge-left-description);
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+  }
+
+  @include breakpoint($tablet-breakpoint) {
+    max-height: 38rem;
+
+    &__background {
+      height: auto;
+      left: 0;
+      top: -6.5rem;
+      width: 110vw;
+    }
+  }
+
+  @include breakpoint($desktop-breakpoint) {
+    min-height: 700px;
+
+    &__background {
+      height: auto;
+      left: 0;
+      top: -2.5rem;
+      width: 100vw;
+    }
+
+    &__featured-card {
+      left: 0;
+      margin-top: 2.5rem;
+      max-height: unset;
+      min-width: 600px;
+      width: 50%;
+    }
+
+    .closing-gauge {
+      &__left {
+        padding-right: 1rem;
+
+        &::after {
+          border-bottom-width: 0.33rem;
+          border-top-width: 0.33rem;
+        }
+      }
+
+      &__right {
+        padding-left: 1rem;
+      }
+
+      &__title {
+        font-size: 1.25rem;
+      }
+
+      &__number,
+      &__desc {
+        font-size: 2rem;
+      }
+    }
+  }
+}
