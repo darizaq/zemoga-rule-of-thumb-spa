@@ -109,7 +109,8 @@
             "stylePreprocessorOptions": {
               "includePaths": ["src/assets/scss/"]
             },
-            "scripts": []
+            "scripts": [],
+            "codeCoverageExclude": ["src/test.ts"]
           }
         }
       }
