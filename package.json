@@ -14,7 +14,9 @@
     "prerender": "ng run zemoga-rule-of-thumb-spa:prerender",
     "e2e": "tsc --project e2e/tsconfig.json && nightwatch",
     "build:docker": "npm run build:ssr && docker build . -t darizaq/zemoga-rule-of-thumb-spa",
-    "lint:ng": "ng lint"
+    "lint:ng": "ng lint",
+    "lint:scss": "stylelint \"src/**/*.scss\"",
+    "lint": "npm run lint:ng && npm run lint:scss"
   },
   "private": true,
   "author": "Danilo Ariza",
@@ -72,6 +74,9 @@
     "karma-jasmine-html-reporter": "1.5.0",
     "nightwatch": "1.7.8",
     "prettier": "2.3.2",
+    "stylelint": "13.13.1",
+    "stylelint-config-prettier": "8.0.2",
+    "stylelint-config-sass-guidelines": "8.0.0",
     "typescript": "4.3.2"
   }
 }
