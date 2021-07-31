@@ -15,19 +15,34 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "zmg",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/zemoga-rule-of-thumb-spa",
+            "outputPath": "dist/zemoga-rule-of-thumb-spa/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "src/assets/",
+                "ignore": ["**/*.scss"],
+                "output": "/assets/"
+              },
+              {
+                "glob": "favicon.ico",
+                "input": "src/",
+                "output": "/"
+              }
+            ],
+            "styles": ["src/assets/scss/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/assets/scss/"]
+            },
             "scripts": []
           },
           "configurations": {
@@ -90,8 +105,66 @@
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
-            "scripts": []
+            "styles": ["src/assets/scss/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/assets/scss/"]
+            },
+            "scripts": [],
+            "codeCoverageExclude": ["src/test.ts"]
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/zemoga-rule-of-thumb-spa/server",
+            "main": "src/server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/assets/scss/"]
+            }
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "zemoga-rule-of-thumb-spa:build",
+            "serverTarget": "zemoga-rule-of-thumb-spa:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "zemoga-rule-of-thumb-spa:build:production",
+              "serverTarget": "zemoga-rule-of-thumb-spa:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "zemoga-rule-of-thumb-spa:build:production",
+            "serverTarget": "zemoga-rule-of-thumb-spa:server:production",
+            "routes": ["/"]
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }
