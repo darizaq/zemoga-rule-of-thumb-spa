@@ -1,0 +1,11 @@
+@mixin font($size, $line-height: inherit, $weight: 400) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+@mixin breakpoint($value) {
+  @media only screen and (min-width: #{$value}) {
+    @content;
+  }
+}
