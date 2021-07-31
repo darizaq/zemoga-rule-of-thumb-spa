@@ -11,7 +11,8 @@
     "dev:ssr": "ng run zemoga-rule-of-thumb-spa:serve-ssr",
     "build:ssr": "npm run build && ng run zemoga-rule-of-thumb-spa:server:production",
     "serve:ssr": "node dist/zemoga-rule-of-thumb-spa/server/main.js",
-    "prerender": "ng run zemoga-rule-of-thumb-spa:prerender"
+    "prerender": "ng run zemoga-rule-of-thumb-spa:prerender",
+    "e2e": "tsc --project e2e/tsconfig.json && nightwatch"
   },
   "private": true,
   "author": "Danilo Ariza",
@@ -45,13 +46,16 @@
     "@angular/cli": "12.1.1",
     "@angular/compiler-cli": "12.1.1",
     "@types/jasmine": "3.6.0",
+    "@types/nightwatch": "1.3.4",
     "@types/node": "12.11.1",
+    "chromedriver": "92.0.0",
     "jasmine-core": "3.7.0",
     "karma": "6.3.0",
     "karma-chrome-launcher": "3.1.0",
     "karma-coverage": "2.0.3",
     "karma-jasmine": "4.0.0",
     "karma-jasmine-html-reporter": "1.5.0",
+    "nightwatch": "1.7.8",
     "prettier": "2.3.2",
     "typescript": "4.3.2"
   }

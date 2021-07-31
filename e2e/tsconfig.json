@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "../e2e-out-tsc/",
+    "module": "commonjs",
+    "target": "es2018",
+    "types": ["node"],
+    "resolveJsonModule": true
+  }
+}
