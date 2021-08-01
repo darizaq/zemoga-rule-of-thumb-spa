@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { GaugeBarComponent } from './components/gauge-bar/gauge-bar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { PollComponent } from './components/poll/poll.component';
 import { RulingCardComponent } from './components/ruling-card/ruling-card.component';
 import { RulingsComponent } from './components/rulings/rulings.component';
 import { SelectComponent } from './components/select/select.component';
@@ -23,6 +24,7 @@ import { SelectComponent } from './components/select/select.component';
     GaugeBarComponent,
     HeaderComponent,
     NavigationComponent,
+    PollComponent,
     RulingCardComponent,
     RulingsComponent,
     SelectComponent
@@ -35,6 +37,7 @@ import { SelectComponent } from './components/select/select.component';
     GaugeBarComponent,
     HeaderComponent,
     NavigationComponent,
+    PollComponent,
     RulingCardComponent,
     RulingsComponent,
     SelectComponent

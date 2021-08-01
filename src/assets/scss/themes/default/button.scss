@@ -1,7 +1,15 @@
 :root {
+  --color-default-button-background: rgba(48, 48, 48, 0.6);
+  --color-default-button-border: var(--color-white);
+  --color-default-button-disabled-background: var(--color-darker-background);
+  --color-default-button-focus-outline: var(--color-white);
+  --color-default-button-hover-background: rgba(48, 48, 48, 0.8);
+  --color-default-button-text: var(--color-white);
   --color-icon-button-background-positive: rgba(var(--color-green-positive), 0.8);
   --color-icon-button-background-positive-hover: rgba(var(--color-green-positive), 1);
   --color-icon-button-background-negative: rgba(var(--color-yellow-negative), 0.8);
   --color-icon-button-background-negative-hover: rgba(var(--color-yellow-negative), 1);
   --color-icon-button-background: transparent;
+  --color-icon-button-outline-focus: var(--color-white);
+  --color-icon-button-outline-active: var(--color-white);
 }

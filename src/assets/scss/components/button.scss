@@ -9,6 +9,14 @@ button {
   padding: 0;
   text-align: center;
 
+  &:focus {
+    outline: 2px dotted var(--color-icon-button-outline-focus);
+  }
+
+  &--active {
+    outline: 2px solid var(--color-icon-button-outline-active);
+  }
+
   &--positive {
     background-color: var(--color-icon-button-background-positive);
 
@@ -23,5 +31,27 @@ button {
     &:hover {
       background-color: var(--color-icon-button-background-negative-hover);
     }
+  }
+}
+
+.default-button {
+  @include font(15px, 18px);
+  background-color: var(--color-default-button-background);
+  border: 1px solid var(--color-default-button-border);
+  color: var(--color-default-button-text);
+  padding: 9px 20px;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: var(--color-default-button-hover-background);
+  }
+
+  &:disabled {
+    background-color: var(--color-default-button-disabled-background);
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    outline: 1px dotted var(--color-default-button-focus-outline);
   }
 }
