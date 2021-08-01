@@ -84,10 +84,13 @@
     max-height: 38rem;
 
     &__background {
-      height: auto;
       left: 0;
-      top: -6.5rem;
+      top: 0;
       width: 110vw;
+    }
+
+    &__featured-card {
+      width: 48vw;
     }
   }
 
@@ -97,7 +100,7 @@
     &__background {
       height: auto;
       left: 0;
-      top: -2.5rem;
+      top: -2rem;
       width: 100vw;
     }
 
