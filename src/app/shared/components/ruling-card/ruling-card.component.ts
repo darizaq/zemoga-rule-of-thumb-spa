@@ -8,11 +8,11 @@ import { rulingCardConstants as constants } from './ruling-card.constants';
 @Component({
   selector: 'zmg-ruling-card',
   templateUrl: './ruling-card.component.html',
-  styleUrls: ['./ruling-card.component.scss']
+  styleUrls: ['./ruling-card.component.scss', './ruling-card-list-type.component.scss']
 })
 export class RulingCardComponent {
   public imagePath = constants.imageBasePath;
-  public isPositiveState: boolean;
+  public isPositiveState = false;
   public ruling: RulingCard;
   public viewType = rulingsConstants.viewType;
 
@@ -20,6 +20,25 @@ export class RulingCardComponent {
 
   constructor() {
     this.ruling = mockRulingCard;
+
+    this.updatePositiveState();
+  }
+
+  /**
+   * Updates vote values
+   *
+   * @param isPositiveVote - Vote value
+   */
+  public updateVotes(isPositiveVote: boolean): void {
+    isPositiveVote ? (this.ruling.votes.positive += 1) : (this.ruling.votes.negative += 1);
+
+    this.updatePositiveState();
+  }
+
+  /**
+   * Updates positive state for ruling card
+   */
+  private updatePositiveState(): void {
     this.isPositiveState = mockRulingCard.votes.positive >= mockRulingCard.votes.negative;
   }
 }

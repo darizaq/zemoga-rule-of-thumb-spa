@@ -26,6 +26,13 @@
       </div>
       <p class="ruling-card__content-description">{{ ruling?.description }}</p>
     </div>
+    <zmg-poll
+      class="ruling-card__content-poll"
+      [category]="ruling?.category || ''"
+      [lastUpdated]="ruling?.lastUpdated || ''"
+      [showBigButtons]="type === viewType.list"
+      (pollSubmitted)="updateVotes($event)"
+    ></zmg-poll>
   </section>
   <zmg-gauge-bar
     [negative]="ruling?.votes?.negative || 0"
