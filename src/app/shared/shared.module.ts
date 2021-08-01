@@ -6,6 +6,7 @@ import { BannerMainComponent } from './components/banner-main/banner-main.compon
 import { BannerSupplementalComponent } from './components/banner-supplemental/banner-supplemental.component';
 import { FeaturedCardComponent } from './components/featured-card/featured-card.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { GaugeBarComponent } from './components/gauge-bar/gauge-bar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { RulingCardComponent } from './components/ruling-card/ruling-card.component';
@@ -19,6 +20,7 @@ import { SelectComponent } from './components/select/select.component';
     BannerSupplementalComponent,
     FeaturedCardComponent,
     FooterComponent,
+    GaugeBarComponent,
     HeaderComponent,
     NavigationComponent,
     RulingCardComponent,
@@ -30,6 +32,7 @@ import { SelectComponent } from './components/select/select.component';
     BannerSupplementalComponent,
     FeaturedCardComponent,
     FooterComponent,
+    GaugeBarComponent,
     HeaderComponent,
     NavigationComponent,
     RulingCardComponent,

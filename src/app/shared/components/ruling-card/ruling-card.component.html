@@ -27,4 +27,9 @@
       <p class="ruling-card__content-description">{{ ruling?.description }}</p>
     </div>
   </section>
+  <zmg-gauge-bar
+    [negative]="ruling?.votes?.negative || 0"
+    [positive]="ruling?.votes?.positive || 0"
+    [showBigBar]="type === viewType.list"
+  ></zmg-gauge-bar>
 </article>
