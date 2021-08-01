@@ -1,0 +1,16 @@
+<section class="rulings">
+  <div class="rulings__heading">
+    <h3 class="rulings__title">{{ 'rulings.previous' | translate }}</h3>
+  </div>
+  <div
+    class="rulings__items-container"
+    [ngClass]="{
+      'rulings__items-container--grid': currentViewType === viewType.grid,
+      'rulings__items-container--list': currentViewType === viewType.list
+    }"
+  >
+    <div class="rulings__item" *ngFor="let ruling of rulings">
+      <div class="mock-item"></div>
+    </div>
+  </div>
+</section>
