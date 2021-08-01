@@ -1,0 +1,110 @@
+@import 'abstracts';
+
+.footer {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1rem 3rem;
+
+  &__links {
+    li {
+      font-size: 1.25rem;
+      padding: 0.5rem 0;
+
+      a {
+        color: var(--color-footer-link);
+        text-decoration: none;
+
+        &:hover {
+          color: var(--color-footer-link-hover);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__social {
+    span {
+      color: var(--color-footer-social-label);
+      font-size: 1.25rem;
+      text-align: right;
+    }
+
+    i[class^='zmg-icon-'] {
+      color: var(--color-footer-social-icon);
+      font-size: to-rem(24px);
+    }
+
+    ul {
+      display: flex;
+      margin-top: 1rem;
+    }
+
+    li {
+      margin-right: 1rem;
+    }
+  }
+
+  @include breakpoint($tablet-breakpoint) {
+    align-items: flex-start;
+    margin-left: 0;
+    margin-right: 0;
+
+    &__links ul,
+    &__social {
+      display: flex;
+    }
+
+    &__links {
+      ul {
+        margin-left: 1rem;
+      }
+
+      li {
+        font-size: 1rem;
+        margin-right: 2rem;
+        padding: 0;
+      }
+    }
+
+    &__social {
+      align-items: center;
+
+      span {
+        color: var(--color-footer-social-label-lg);
+        font-size: 0.833rem;
+        margin-right: 1rem;
+      }
+
+      i[class^='zmg-icon-'] {
+        font-size: to-rem(24px, $tablet-rem);
+      }
+
+      ul {
+        margin-top: to-rem(3px, $tablet-rem);
+      }
+    }
+  }
+
+  @include breakpoint($desktop-breakpoint) {
+    &__links {
+      ul {
+        margin-left: 0;
+      }
+    }
+
+    &__social {
+      li {
+        margin-right: 0;
+
+        + li {
+          margin-left: 1rem;
+        }
+      }
+
+      i[class^='zmg-icon-'] {
+        font-size: to-rem(24px, $desktop-rem);
+      }
+    }
+  }
+}
