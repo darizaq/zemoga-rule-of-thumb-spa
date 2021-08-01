@@ -42,6 +42,5 @@ export class SelectComponent {
    */
   public toggleSelect(): void {
     this.open = !this.open;
-    console.log('asdasasdas', this.open);
   }
 }
