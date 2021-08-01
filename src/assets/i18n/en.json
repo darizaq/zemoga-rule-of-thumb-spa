@@ -1,4 +1,7 @@
 {
+  "rulingCard": {
+    "imageAlt": "{{name}} picture"
+  },
   "rulings": {
     "previous": "Previous Rulings"
   },

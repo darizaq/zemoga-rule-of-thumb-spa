@@ -4,8 +4,8 @@ export interface RulingCard {
   lastUpdated: string;
   name: string;
   photo: {
-    '1x': string;
-    '2x': string;
+    resolution1x: string;
+    resolution2x: string;
   };
   votes: {
     negative: number;

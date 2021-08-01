@@ -1,0 +1,205 @@
+@import 'abstracts';
+
+.ruling-card {
+  padding-top: 100%;
+  position: relative;
+  width: 100%;
+
+  &__figure {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &__image {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__content {
+    background: var(--gradient-ruling-card-content);
+    color: var(--color-ruling-card-text);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end;
+    left: 0;
+    padding: 0 to-rem(30px) to-rem(36px);
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &-heading {
+      margin-bottom: to-rem(7px);
+      position: relative;
+    }
+
+    &-title {
+      @include font(to-rem(30px), to-rem(36px));
+      -webkit-box-orient: vertical;
+      color: var(--color-ruling-card-title);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      margin: 0 1rem 0 to-rem(2px);
+      overflow: hidden;
+    }
+
+    &-description {
+      @include font(to-rem(15px), to-rem(18px));
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      margin: 0 1rem 1rem to-rem(10px);
+      overflow: hidden;
+    }
+  }
+
+  &__thumbs-indicator {
+    @include font(to-rem(16px), to-rem(30px));
+    bottom: 0;
+    display: block;
+    height: to-rem(30px);
+    left: to-rem(-30px);
+    position: absolute;
+    text-align: center;
+    width: to-rem(30px);
+
+    &--up {
+      background-color: var(--color-ruling-card-thumbs-indicator-up);
+    }
+
+    &--down {
+      background-color: var(--color-ruling-card-thumbs-indicator-down);
+    }
+  }
+
+  @include breakpoint($tablet-breakpoint) {
+    &__content {
+      padding: 0 to-rem(36px, $tablet-rem) to-rem(36px, $tablet-rem);
+
+      &-heading {
+        margin-bottom: to-rem(7px, $tablet-rem);
+      }
+
+      &-title {
+        @include font(to-rem(30px, $tablet-rem), to-rem(36px, $tablet-rem));
+      }
+
+      &-description {
+        @include font(to-rem(15px, $tablet-rem), to-rem(18px, $tablet-rem));
+        margin-bottom: to-rem(12px, $tablet-rem);
+      }
+    }
+
+    &__thumbs-indicator {
+      @include font(to-rem(16px, $tablet-rem), to-rem(30px, $tablet-rem));
+      height: to-rem(30px, $tablet-rem);
+      left: to-rem(-36px, $tablet-rem);
+      width: to-rem(30px, $tablet-rem);
+    }
+
+    &__list-type {
+      padding-top: 0;
+
+      .ruling-card {
+        &__figure {
+          max-width: 267px;
+          width: 29.5%;
+        }
+
+        &__image {
+          mask-image: var(--gradient-ruling-card-image);
+          width: 75%;
+        }
+
+        &__content {
+          background: var(--gradient-ruling-card-list-type-content);
+          flex-direction: row;
+          padding: 0 to-rem(12px, $tablet-rem) to-rem(36px, $tablet-rem) to-rem(150px, $tablet-rem);
+          position: relative;
+
+          &-heading {
+            margin-bottom: to-rem(18px, $tablet-rem);
+            position: initial;
+          }
+
+          &-title {
+            @include font(to-rem(28px, $tablet-rem), to-rem(34px, $tablet-rem));
+            margin-left: 0;
+          }
+
+          &-description {
+            @include font(to-rem(14px, $tablet-rem), to-rem(17px, $tablet-rem));
+            margin: 0 1rem to-rem(20px, $tablet-rem) 0;
+          }
+        }
+
+        &__thumbs-indicator {
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+  }
+
+  @include breakpoint($desktop-breakpoint) {
+    &__content {
+      padding: 0 to-rem(36px, $desktop-rem) to-rem(36px, $desktop-rem);
+
+      &-heading {
+        margin-bottom: to-rem(7px, $desktop-rem);
+      }
+
+      &-title {
+        @include font(to-rem(30px, $desktop-rem), to-rem(36px, $desktop-rem));
+      }
+
+      &-description {
+        @include font(to-rem(15px, $desktop-rem), to-rem(18px, $desktop-rem));
+        margin-bottom: to-rem(12px, $desktop-rem);
+      }
+    }
+
+    &__thumbs-indicator {
+      @include font(to-rem(16px, $desktop-rem), to-rem(30px, $desktop-rem));
+      height: to-rem(30px, $desktop-rem);
+      left: to-rem(-36px, $desktop-rem);
+      width: to-rem(30px, $desktop-rem);
+    }
+
+    &__list-type {
+      .ruling-card {
+        &__figure {
+          width: 24%;
+        }
+
+        &__content {
+          padding: 0 to-rem(14px, $desktop-rem) to-rem(54px, $desktop-rem) to-rem(260px, $desktop-rem);
+
+          &-heading {
+            margin-bottom: 0;
+          }
+
+          &-title {
+            @include font(to-rem(36px, $desktop-rem), to-rem(63px, $desktop-rem));
+          }
+
+          &-description {
+            @include font(to-rem(18px, $desktop-rem), to-rem(22px, $desktop-rem));
+            margin-bottom: to-rem(10px, $desktop-rem);
+          }
+        }
+
+        &__thumbs-indicator {
+          @include font(to-rem(24px, $desktop-rem), to-rem(45px, $desktop-rem));
+          height: to-rem(45px, $desktop-rem);
+          left: 0;
+          width: to-rem(45px, $desktop-rem);
+        }
+      }
+    }
+  }
+}

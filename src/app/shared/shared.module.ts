@@ -8,6 +8,7 @@ import { FeaturedCardComponent } from './components/featured-card/featured-card.
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { RulingCardComponent } from './components/ruling-card/ruling-card.component';
 import { RulingsComponent } from './components/rulings/rulings.component';
 import { SelectComponent } from './components/select/select.component';
 
@@ -20,6 +21,7 @@ import { SelectComponent } from './components/select/select.component';
     FooterComponent,
     HeaderComponent,
     NavigationComponent,
+    RulingCardComponent,
     RulingsComponent,
     SelectComponent
   ],
@@ -30,6 +32,7 @@ import { SelectComponent } from './components/select/select.component';
     FooterComponent,
     HeaderComponent,
     NavigationComponent,
+    RulingCardComponent,
     RulingsComponent,
     SelectComponent
   ]
