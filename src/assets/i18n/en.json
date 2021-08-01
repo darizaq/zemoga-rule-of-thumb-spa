@@ -1,1 +1,8 @@
-{}
+{
+  "rulings": {
+    "previous": "Previous Rulings"
+  },
+  "select": {
+    "items": "Items"
+  }
+}
