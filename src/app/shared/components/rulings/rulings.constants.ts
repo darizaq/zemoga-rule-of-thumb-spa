@@ -3,4 +3,15 @@ const viewType = {
   grid: 'grid'
 };
 
-export const rulingsConstants = { viewType };
+const viewOptions = [
+  {
+    label: 'List',
+    value: viewType.list
+  },
+  {
+    label: 'Grid',
+    value: viewType.grid
+  }
+];
+
+export const rulingsConstants = { viewOptions, viewType };

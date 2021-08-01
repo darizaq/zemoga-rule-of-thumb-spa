@@ -1,12 +1,17 @@
 <section class="rulings">
   <div class="rulings__heading">
     <h3 class="rulings__title">{{ 'rulings.previous' | translate }}</h3>
+    <zmg-select
+      class="rulings__view-select"
+      [items]="viewOptions"
+      (itemChange)="onViewOptionChange($event)"
+    ></zmg-select>
   </div>
   <div
     class="rulings__items-container"
     [ngClass]="{
-      'rulings__items-container--grid': currentViewType === viewType.grid,
-      'rulings__items-container--list': currentViewType === viewType.list
+      'rulings__items-container--grid': currentViewType.value === viewType.grid,
+      'rulings__items-container--list': currentViewType.value === viewType.list
     }"
   >
     <div class="rulings__item" *ngFor="let ruling of rulings">
