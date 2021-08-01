@@ -1,0 +1,27 @@
+button {
+  cursor: pointer;
+}
+
+.icon-button {
+  background-color: var(--color-icon-button-background);
+  border: 0;
+  font-size: 1.25rem;
+  padding: 0;
+  text-align: center;
+
+  &--positive {
+    background-color: var(--color-icon-button-background-positive);
+
+    &:hover {
+      background-color: var(--color-icon-button-background-positive-hover);
+    }
+  }
+
+  &--negative {
+    background-color: var(--color-icon-button-background-negative);
+
+    &:hover {
+      background-color: var(--color-icon-button-background-negative-hover);
+    }
+  }
+}

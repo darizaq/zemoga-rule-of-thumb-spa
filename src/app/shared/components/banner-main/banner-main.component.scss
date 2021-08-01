@@ -1,0 +1,107 @@
+@import 'abstracts';
+
+.banner {
+  align-items: center;
+  background-color: var(--color-banner-main-background);
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  overflow: hidden;
+  padding: 1rem;
+  position: relative;
+
+  &__left {
+    flex-basis: 40%;
+    margin-right: 1rem;
+  }
+
+  &__right {
+    flex-basis: 60%;
+  }
+
+  &__hairline {
+    color: var(--color-banner-main-hairline);
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: -0.07rem;
+  }
+
+  &__title {
+    color: var(--color-banner-main-title);
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.05rem;
+  }
+
+  &__text {
+    color: var(--color-banner-main-text);
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: -0.05rem;
+    margin: 0;
+    padding-right: 3px;
+  }
+
+  .icon-button {
+    display: none;
+  }
+
+  @include breakpoint($mobile-breakpoint) {
+    &__left {
+      flex-basis: 30%;
+    }
+
+    &__right {
+      flex-basis: 70%;
+    }
+  }
+
+  @include breakpoint($tablet-breakpoint) {
+    &__left {
+      flex-basis: 20%;
+    }
+
+    &__right {
+      flex-basis: 80%;
+      padding: to-rem(8px, $tablet-rem) 0;
+    }
+
+    &__hairline {
+      font-size: 1rem;
+    }
+
+    &__title {
+      font-size: to-rem(21px, $tablet-rem);
+    }
+
+    &__text {
+      font-size: to-rem(18px, $tablet-rem);
+    }
+  }
+
+  @include breakpoint($desktop-breakpoint) {
+    margin: 1rem 0;
+
+    &__right {
+      flex-basis: 80%;
+      padding: 0;
+    }
+
+    &__text,
+    &__hairline {
+      font-size: 1rem;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      letter-spacing: 0;
+    }
+
+    .icon-button {
+      display: block;
+      font-size: 1rem;
+      margin-left: 2rem;
+    }
+  }
+}

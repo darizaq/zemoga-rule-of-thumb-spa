@@ -1,0 +1,139 @@
+@import 'abstracts';
+
+.nav {
+  background: var(--graient-nav-background);
+  display: flex;
+  justify-content: space-between;
+  min-height: 10rem;
+  padding: 0 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+
+  &__logo {
+    @include font(2rem, 2.5rem, 400);
+    color: var(--color-nav-logo);
+    margin: 2.5rem 0 0;
+  }
+
+  &__hamburger {
+    @include font(25px, 25px);
+    color: var(--color-nav-hamburger);
+    height: 20px;
+    position: relative;
+    right: 1rem;
+    top: 2rem;
+    width: 25px;
+
+    &:focus + .nav__links {
+      transform: translateX(0);
+    }
+  }
+
+  &__links {
+    background-color: var(--color-nav-links-background);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    left: 0;
+    padding: 4rem 0 2rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateX(100vw);
+    width: 100vw;
+
+    &:focus-within {
+      transform: translateX(0);
+    }
+
+    li {
+      font-size: 2rem;
+      margin: 3rem 0;
+      text-align: center;
+      width: 100%;
+
+      &:last-child {
+        order: -1;
+      }
+    }
+
+    a {
+      color: var(--color-nav-link);
+      text-decoration: none;
+    }
+  }
+
+  &__search {
+    @include font(2rem, 2rem);
+    color: var(--color-nav-search);
+    height: 24px;
+    margin-left: 0.5rem;
+    width: 24px;
+
+    &-input {
+      background-color: transparent;
+      border: 0;
+      border-bottom: 2px solid var(--color-nav-search-input-border);
+      border-radius: 0;
+      color: var(--color-nav-search-input);
+      font-family: var(--font-family);
+      font-size: 1.5rem;
+      transition: width 0.2s ease-in;
+      width: 25vw;
+
+      &:focus {
+        outline: 0 none;
+        width: 60vw;
+      }
+    }
+  }
+
+  @include breakpoint($desktop-breakpoint) {
+    min-height: 22vh;
+
+    &__logo {
+      margin-top: 3rem;
+    }
+
+    &__hamburger {
+      display: none;
+    }
+
+    &__links {
+      align-items: center;
+      background-color: transparent;
+      flex-direction: row;
+      height: auto;
+      justify-content: flex-end;
+      left: auto;
+      padding: 0;
+      position: absolute;
+      right: 0;
+      top: 3rem;
+      transform: translateX(0);
+      width: 40vw;
+
+      li {
+        @include font(1rem, inherit, 300);
+        margin: 0 1rem 0 0;
+        text-align: right;
+        width: fit-content;
+
+        &:last-child {
+          order: 0;
+        }
+      }
+    }
+
+    &__search {
+      height: 2rem;
+      width: 2rem;
+
+      &-input {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+html,
+body {
+  @include font($mobile-rem, initial);
+  background-color: var(--color-white);
+  font-family: var(--font-family);
+  width: 100%;
+}
+
+body {
+  position: relative;
+}
+
+a,
+a:visited {
+  color: var(--color-white);
+}
+
+hr[role='separator'] {
+  border: 0 none;
+  border-bottom: 2px dotted var(--color-dark-gray);
+  margin: 1.5rem 1rem;
+}
+
+.max-centered {
+  display: contents;
+}
+
+main[role='main'] {
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+main h2,
+main h3,
+main h4 {
+  color: var(--color-dark-gray);
+  font-weight: 300;
+}
+
+main h2 {
+  font-size: 2rem;
+  margin: 0 0 2rem;
+}
+
+@include breakpoint($tablet-breakpoint) {
+  html,
+  body {
+    font-size: $tablet-rem;
+  }
+}
+
+@include breakpoint($desktop-breakpoint) {
+  html,
+  body {
+    font-size: $desktop-rem;
+  }
+
+  hr[role='separator'] {
+    margin: 2rem 0;
+  }
+
+  .max-centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1100px;
+    position: relative;
+    width: 100%;
+
+    > *,
+    > hr[role='separator'] {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    main[role='main'] {
+      padding: 0;
+    }
+  }
+}

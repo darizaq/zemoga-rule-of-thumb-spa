@@ -27,7 +27,12 @@
     ],
     "property-case": "lower",
     "property-no-unknown": true,
-    "property-no-vendor-prefix": true,
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": ["box-orient", "line-clamp"]
+      }
+    ],
     "rule-empty-line-before": [
       "always",
       {
@@ -56,6 +61,11 @@
     "string-quotes": "single",
     "unit-case": "lower",
     "unit-no-unknown": true,
-    "value-no-vendor-prefix": true
+    "value-no-vendor-prefix": [
+      true,
+      {
+        "ignoreValues": ["box"]
+      }
+    ]
   }
 }
