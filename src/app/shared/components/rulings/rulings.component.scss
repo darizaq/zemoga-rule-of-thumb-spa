@@ -31,13 +31,6 @@
     width: to-rem(300px);
   }
 
-  /* Remove after actual ruling item added */
-  .mock-item {
-    background-color: rgba(0, 0, 0, 0.1);
-    padding-top: 100%;
-    width: 100%;
-  }
-
   @include breakpoint($tablet-breakpoint) {
     &__view-select {
       display: inline-flex;
@@ -68,11 +61,6 @@
           + .rulings__item {
             margin: to-rem(14px, $tablet-rem) 0 0;
           }
-        }
-
-        /* Remove after actual ruling item added */
-        .mock-item {
-          padding-top: 20%;
         }
       }
     }

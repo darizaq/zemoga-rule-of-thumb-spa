@@ -15,7 +15,7 @@
     }"
   >
     <div class="rulings__item" *ngFor="let ruling of rulings">
-      <div class="mock-item"></div>
+      <zmg-ruling-card [type]="currentViewType.value"></zmg-ruling-card>
     </div>
   </div>
 </section>
