@@ -28,6 +28,7 @@
 
         &-title {
           @include font(to-rem(28px, $tablet-rem), to-rem(34px, $tablet-rem));
+          @include multiline-text-ellipsis(1);
           margin-left: 0;
         }
 

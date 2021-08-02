@@ -39,21 +39,15 @@
 
     &-title {
       @include font(to-rem(30px), to-rem(36px));
-      -webkit-box-orient: vertical;
+      @include multiline-text-ellipsis(2);
       color: var(--color-ruling-card-title);
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
       margin: 0 1rem 0 to-rem(2px);
-      overflow: hidden;
     }
 
     &-description {
       @include font(to-rem(15px), to-rem(18px));
-      -webkit-box-orient: vertical;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
+      @include multiline-text-ellipsis(2);
       margin: 0 1rem 1rem to-rem(10px);
-      overflow: hidden;
     }
   }
 

@@ -9,3 +9,10 @@
     @content;
   }
 }
+
+@mixin multiline-text-ellipsis($lines: 1) {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}
