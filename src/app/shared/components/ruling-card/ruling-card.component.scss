@@ -107,11 +107,12 @@
 
       &-title {
         @include font(to-rem(30px, $desktop-rem), to-rem(36px, $desktop-rem));
+        margin-right: to-rem(30px, $desktop-rem);
       }
 
       &-description {
         @include font(to-rem(15px, $desktop-rem), to-rem(18px, $desktop-rem));
-        margin-bottom: to-rem(12px, $desktop-rem);
+        margin: 0 to-rem(30px, $desktop-rem) to-rem(12px, $desktop-rem) 0;
       }
     }
 
