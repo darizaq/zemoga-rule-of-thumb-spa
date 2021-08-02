@@ -15,7 +15,7 @@
     }"
   >
     <div class="rulings__item" *ngFor="let ruling of rulings; trackBy: rulingsTrackByFunction">
-      <zmg-ruling-card [type]="currentViewType.value"></zmg-ruling-card>
+      <zmg-ruling-card [ruling]="ruling" [type]="currentViewType.value"></zmg-ruling-card>
     </div>
   </div>
 </section>

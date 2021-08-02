@@ -4,6 +4,7 @@ import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-tran
 
 import { ImageHelperService } from '@core/services/image-helper/image-helper.service';
 import { ImgSrcsetPipe } from '@shared/pipes/img-srcset/img-srcset.pipe';
+import { mockRulingCard } from '@mocks/ruling-card.mock';
 import { RulingCardComponent } from './ruling-card.component';
 
 describe('RulingCardComponent', () => {
@@ -36,9 +37,17 @@ describe('RulingCardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should set image resources array', () => {
+  it('should update ruling data', () => {
     const expectedImageResources = 2;
+    const value = 2;
 
+    mockRulingCard.votes.negative = value;
+    mockRulingCard.votes.positive = value;
+    component.ruling = mockRulingCard;
+
+    fixture.detectChanges();
+
+    expect(component.isPositiveState).toBeTrue();
     expect(component.imageResources.length).toEqual(expectedImageResources);
   });
 
@@ -47,6 +56,7 @@ describe('RulingCardComponent', () => {
     const increment = 1;
     const expectedValue = voteValue + increment;
 
+    component.ruling = mockRulingCard;
     component.ruling.votes.negative = voteValue;
     component.ruling.votes.positive = voteValue;
 
@@ -61,6 +71,7 @@ describe('RulingCardComponent', () => {
     const increment = 1;
     const expectedValue = voteValue + increment;
 
+    component.ruling = mockRulingCard;
     component.ruling.votes.negative = voteValue;
     component.ruling.votes.positive = voteValue;
 
