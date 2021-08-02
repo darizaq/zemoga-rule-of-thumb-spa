@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./features/home/home.module').then((m) => m.HomeModule)
+  },
+  {
+    path: '404',
+    loadChildren: () => import('./features/not-found/not-found.module').then((m) => m.NotFoundModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./features/not-found/not-found.module').then((m) => m.NotFoundModule)
   }
 ];
 
