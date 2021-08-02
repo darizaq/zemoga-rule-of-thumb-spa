@@ -3,6 +3,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
 import { join } from 'path';
 import { ngExpressEngine } from '@nguniversal/express-engine';
+import * as dotenv from 'dotenv';
 import * as express from 'express';
 
 import { AppServerModule } from './main.server';
@@ -12,6 +13,11 @@ export const app: () => express.Express = () => {
   const server = express();
   const distFolder = join(process.cwd(), 'dist/zemoga-rule-of-thumb-spa/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
+  const dotenvConfig = dotenv.config();
+
+  if (dotenvConfig.error) {
+    console.log('Error loading environment variables ', dotenvConfig.error);
+  }
 
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
   server.engine(
