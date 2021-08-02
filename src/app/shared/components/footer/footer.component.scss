@@ -30,7 +30,7 @@
       text-align: right;
     }
 
-    i[class^='zmg-icon-'] {
+    .zmg-icon {
       color: var(--color-footer-social-icon);
       font-size: to-rem(24px);
     }
@@ -76,7 +76,7 @@
         margin-right: 1rem;
       }
 
-      i[class^='zmg-icon-'] {
+      .zmg-icon {
         font-size: to-rem(24px, $tablet-rem);
       }
 
@@ -102,7 +102,7 @@
         }
       }
 
-      i[class^='zmg-icon-'] {
+      .zmg-icon {
         font-size: to-rem(24px, $desktop-rem);
       }
     }

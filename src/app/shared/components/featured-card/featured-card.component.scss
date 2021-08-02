@@ -58,7 +58,7 @@
       width: 50%;
     }
 
-    i[class^='zmg-icon-'] {
+    .zmg-icon {
       font-size: 1.25rem;
     }
   }
@@ -135,7 +135,7 @@
         height: auto;
       }
 
-      i[class^='zmg-icon-'] {
+      .zmg-icon {
         @include font(2rem, 2.2rem);
         display: inline-flex;
         margin: 1.3rem 0;
