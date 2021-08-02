@@ -1,11 +1,12 @@
 <section class="select" [ngClass]="{ 'select--open': open }">
-  <button class="select__control" (click)="toggleSelect()">
+  <button class="select__control" aria-haspopup="listbox" (click)="toggleSelect()">
     <span class="select__active-item">{{ activeItem?.label }}</span>
     <i class="select__control-icon zmg-icon-triangle-down" aria-hidden="true"></i>
   </button>
-  <ul class="select__items" [attr.aria-expanded]="open" [attr.aria-label]="'select.items' | translate">
+  <ul class="select__items" role="listbox" [attr.aria-expanded]="open" [attr.aria-label]="'select.items' | translate">
     <li
       class="select__item"
+      role="option"
       tabindex="0"
       *ngFor="let item of items"
       (click)="updateActiveItem(item)"
