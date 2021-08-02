@@ -1,0 +1,42 @@
+<article class="ruling-card" [ngClass]="{ 'ruling-card__list-type': type === viewType.list }">
+  <figure class="ruling-card__figure">
+    <img
+      class="ruling-card__image"
+      [alt]="'rulingCard.imageAlt' | translate: { name: ruling?.name }"
+      [src]="imagePath + ruling?.photo?.resolution1x"
+    />
+  </figure>
+  <section class="ruling-card__content">
+    <div class="ruling-card__content-text">
+      <div class="ruling-card__content-heading">
+        <h4 class="ruling-card__content-title">{{ ruling?.name }}</h4>
+        <div
+          class="ruling-card__thumbs-indicator ruling-card__thumbs-indicator--up"
+          [attr.aria-label]="(isPositiveState ? 'rulingCard.positive' : 'rulingCard.negative') | translate"
+          [ngClass]="{
+            'ruling-card__thumbs-indicator--up': isPositiveState,
+            'ruling-card__thumbs-indicator--down': !isPositiveState
+          }"
+        >
+          <i
+            [ngClass]="{ 'zmg-icon-thumbs-up': isPositiveState, 'zmg-icon-thumbs-down': !isPositiveState }"
+            aria-hidden="true"
+          ></i>
+        </div>
+      </div>
+      <p class="ruling-card__content-description">{{ ruling?.description }}</p>
+    </div>
+    <zmg-poll
+      class="ruling-card__content-poll"
+      [category]="ruling?.category || ''"
+      [lastUpdated]="ruling?.lastUpdated || ''"
+      [showBigButtons]="type === viewType.list"
+      (pollSubmitted)="updateVotes($event)"
+    ></zmg-poll>
+  </section>
+  <zmg-gauge-bar
+    [negative]="ruling?.votes?.negative || 0"
+    [positive]="ruling?.votes?.positive || 0"
+    [showBigBar]="type === viewType.list"
+  ></zmg-gauge-bar>
+</article>

@@ -1,0 +1,90 @@
+@import 'abstracts';
+
+@include breakpoint($tablet-breakpoint) {
+  .ruling-card__list-type {
+    padding-top: 0;
+
+    .ruling-card {
+      &__figure {
+        max-width: 267px;
+        width: 29.5%;
+      }
+
+      &__image {
+        mask-image: var(--gradient-ruling-card-list-type-image);
+        width: 75%;
+      }
+
+      &__content {
+        background: var(--gradient-ruling-card-list-type-content);
+        flex-direction: row;
+        padding: 0 to-rem(12px, $tablet-rem) to-rem(36px, $tablet-rem) to-rem(150px, $tablet-rem);
+        position: relative;
+
+        &-heading {
+          margin-bottom: to-rem(18px, $tablet-rem);
+          position: initial;
+        }
+
+        &-title {
+          @include font(to-rem(28px, $tablet-rem), to-rem(34px, $tablet-rem));
+          margin-left: 0;
+        }
+
+        &-description {
+          @include font(to-rem(14px, $tablet-rem), to-rem(17px, $tablet-rem));
+          margin: 0 1rem to-rem(20px, $tablet-rem) 0;
+        }
+
+        &-poll {
+          margin: to-rem(8px, $tablet-rem) 0 0 to-rem(30px, $tablet-rem);
+          min-width: to-rem(195px, $tablet-rem);
+        }
+      }
+
+      &__thumbs-indicator {
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+}
+
+@include breakpoint($desktop-breakpoint) {
+  .ruling-card__list-type {
+    .ruling-card {
+      &__figure {
+        width: 24%;
+      }
+
+      &__content {
+        padding: 0 to-rem(14px, $desktop-rem) to-rem(54px, $desktop-rem) to-rem(260px, $desktop-rem);
+
+        &-heading {
+          margin-bottom: 0;
+        }
+
+        &-title {
+          @include font(to-rem(36px, $desktop-rem), to-rem(63px, $desktop-rem));
+        }
+
+        &-description {
+          @include font(to-rem(18px, $desktop-rem), to-rem(22px, $desktop-rem));
+          margin-bottom: to-rem(10px, $desktop-rem);
+        }
+
+        &-poll {
+          margin: to-rem(8px, $desktop-rem) 0 0 to-rem(44px, $desktop-rem);
+          min-width: to-rem(245px, $desktop-rem);
+        }
+      }
+
+      &__thumbs-indicator {
+        @include font(to-rem(24px, $desktop-rem), to-rem(45px, $desktop-rem));
+        height: to-rem(45px, $desktop-rem);
+        left: 0;
+        width: to-rem(45px, $desktop-rem);
+      }
+    }
+  }
+}

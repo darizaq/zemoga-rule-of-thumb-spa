@@ -1,0 +1,14 @@
+<section class="gauge-bar" [ngClass]="{ 'gauge-bar--big': showBigBar }">
+  <div class="gauge-bar__indicator gauge-bar__indicator--positive" [style.width.%]="positivePercentage"></div>
+  <div class="gauge-bar__indicator gauge-bar__indicator--negative" [style.width.%]="negativePercentage"></div>
+  <div class="gauge-bar__percentages">
+    <div class="gauge-bar__value">
+      <i class="gauge-bar__icon zmg-icon-thumbs-up" aria-hidden="true"></i>
+      <span>{{ positivePercentage }}%</span>
+    </div>
+    <div class="gauge-bar__value">
+      <span>{{ negativePercentage }}%</span>
+      <i class="gauge-bar__icon gauge-bar__icon--positive zmg-icon-thumbs-down" aria-hidden="true"></i>
+    </div>
+  </div>
+</section>
