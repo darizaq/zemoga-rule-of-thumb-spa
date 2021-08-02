@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { BannerMainComponent } from './components/banner-main/banner-main.component';
@@ -18,7 +19,7 @@ import { RulingsComponent } from './components/rulings/rulings.component';
 import { SelectComponent } from './components/select/select.component';
 
 @NgModule({
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, RouterModule, TranslateModule],
   declarations: [
     BannerMainComponent,
     BannerSupplementalComponent,
