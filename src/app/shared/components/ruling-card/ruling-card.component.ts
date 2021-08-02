@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 import { ImageHelperService } from '@core/services/image-helper/image-helper.service';
-import { ImageResource, RulingCard } from '@core/interfaces';
+import { ImageResource, RulingCard, VoteResponse } from '@core/interfaces';
 import { rulingCardConstants as constants } from './ruling-card.constants';
 import { rulingsConstants } from '@shared/components/rulings/rulings.constants';
+import { RulingsService } from '@core/services/rulings/rulings.service';
 
 @Component({
   selector: 'zmg-ruling-card',
@@ -19,7 +20,7 @@ export class RulingCardComponent {
 
   @Input() public type = this.viewType.grid;
 
-  constructor(private imageHelperService: ImageHelperService) {}
+  constructor(private imageHelperService: ImageHelperService, private rulingsService: RulingsService) {}
 
   @Input()
   public set ruling(rulingCard: RulingCard) {
@@ -41,9 +42,28 @@ export class RulingCardComponent {
    * @param isPositiveVote - Vote value
    */
   public updateVotes(isPositiveVote: boolean): void {
-    isPositiveVote ? (this.ruling.votes.positive += 1) : (this.ruling.votes.negative += 1);
+    const { id } = this.rulingCard;
+    const operation = isPositiveVote
+      ? this.rulingsService.updatePositiveVotes(id)
+      : this.rulingsService.updateNegativeVotes(id);
 
-    this.updatePositiveState();
+    operation.subscribe((response: VoteResponse | undefined) => this.handleVoteResponse(response));
+  }
+
+  /**
+   * Handles vote operation response
+   *
+   * @param response - API response
+   */
+  private handleVoteResponse(response: VoteResponse | undefined): void {
+    const { votes } = this.rulingCard;
+
+    if (response) {
+      votes.negative = response.positiveVotes;
+      votes.positive = response.negativeVotes;
+
+      this.updatePositiveState();
+    }
   }
 
   /**

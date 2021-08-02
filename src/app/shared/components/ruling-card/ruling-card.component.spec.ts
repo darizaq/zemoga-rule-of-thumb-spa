@@ -1,15 +1,25 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { of } from 'rxjs';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { ImageHelperService } from '@core/services/image-helper/image-helper.service';
 import { ImgSrcsetPipe } from '@shared/pipes/img-srcset/img-srcset.pipe';
+import { mockNegativeResponse, mockPositiveResponse } from '@mocks/votes.mock';
 import { mockRulingCard } from '@mocks/ruling-card.mock';
 import { RulingCardComponent } from './ruling-card.component';
+import { RulingsService } from '@core/services/rulings/rulings.service';
 
 describe('RulingCardComponent', () => {
+  const updateNegativeVotesSpy = jasmine.createSpy('updateNegativeVotes').and.returnValue(of(mockNegativeResponse));
+  const updatePositiveVotesSpy = jasmine.createSpy('updatePositiveVotes').and.returnValue(of(mockPositiveResponse));
+  const rulingsServiceMock = {
+    updateNegativeVotes: updateNegativeVotesSpy,
+    updatePositiveVotes: updatePositiveVotesSpy
+  };
   let component: RulingCardComponent;
   let fixture: ComponentFixture<RulingCardComponent>;
+  let rulingsService: RulingsService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -22,7 +32,7 @@ describe('RulingCardComponent', () => {
         })
       ],
       declarations: [ImgSrcsetPipe, RulingCardComponent],
-      providers: [ImageHelperService],
+      providers: [{ provide: RulingsService, useValue: rulingsServiceMock }, ImageHelperService],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   });
@@ -30,6 +40,9 @@ describe('RulingCardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(RulingCardComponent);
     component = fixture.componentInstance;
+    rulingsService = TestBed.inject(RulingsService);
+    component.ruling = mockRulingCard;
+
     fixture.detectChanges();
   });
 
@@ -52,32 +65,27 @@ describe('RulingCardComponent', () => {
   });
 
   it('should update positive vote', () => {
-    const voteValue = 2;
-    const increment = 1;
-    const expectedValue = voteValue + increment;
-
-    component.ruling = mockRulingCard;
-    component.ruling.votes.negative = voteValue;
-    component.ruling.votes.positive = voteValue;
-
     component.updateVotes(true);
 
-    expect(component.ruling.votes.positive).toEqual(expectedValue);
-    expect(component.isPositiveState).toBeTrue();
+    expect(rulingsService.updatePositiveVotes).toHaveBeenCalledWith(mockRulingCard.id);
   });
 
   it('should update negative vote', () => {
-    const voteValue = 2;
-    const increment = 1;
-    const expectedValue = voteValue + increment;
-
-    component.ruling = mockRulingCard;
-    component.ruling.votes.negative = voteValue;
-    component.ruling.votes.positive = voteValue;
-
     component.updateVotes(false);
 
-    expect(component.ruling.votes.negative).toEqual(expectedValue);
-    expect(component.isPositiveState).toBeFalse();
+    expect(rulingsService.updateNegativeVotes).toHaveBeenCalledWith(mockRulingCard.id);
+  });
+
+  it(`shouldn't update vote value for undefined response`, () => {
+    const value = 2;
+
+    mockRulingCard.votes.negative = value;
+    mockRulingCard.votes.positive = value;
+    component.ruling = mockRulingCard;
+
+    component['handleVoteResponse'](undefined);
+
+    expect(component.ruling.votes.negative).toEqual(value);
+    expect(component.ruling.votes.positive).toEqual(value);
   });
 });
