@@ -3,7 +3,8 @@
     <img
       class="ruling-card__image"
       [alt]="'rulingCard.imageAlt' | translate: { name: ruling?.name }"
-      [src]="imagePath + ruling?.photo?.resolution1x"
+      [src]="imageResources[0]?.url"
+      [srcset]="imageResources | imgSrcset"
     />
   </figure>
   <section class="ruling-card__content">
