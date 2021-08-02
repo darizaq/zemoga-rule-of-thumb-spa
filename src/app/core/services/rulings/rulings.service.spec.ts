@@ -2,7 +2,10 @@ import { ApolloTestingController, ApolloTestingModule } from 'apollo-angular/tes
 import { TestBed } from '@angular/core/testing';
 
 import { mockRulingsListResponse } from '@mocks/rulings-list.mock';
-import { RulingCard } from '@core/interfaces';
+import { mockVoteUpdateResponse } from '@mocks/votes.mock';
+import { negativeVoteOperation } from './operations/negative-vote-operation.constants';
+import { positiveVoteOperation } from './operations/positive-vote-operation.constants';
+import { RulingCard, VoteResponse } from '@core/interfaces';
 import { rulingsListOperation } from './operations/rulings-list-operation.constants';
 import { RulingsService } from './rulings.service';
 
@@ -41,6 +44,34 @@ describe('RulingsService', () => {
     });
 
     apolloController.expectOne(rulingsListOperation.query).flush(mockRulingsListResponse);
+    apolloController.verify();
+  });
+
+  it('should update negative votes', (done: DoneFn) => {
+    const mockResponse = { data: { addNegativeVote: mockVoteUpdateResponse } };
+
+    service.updateNegativeVotes(mockVoteUpdateResponse.id).subscribe((response: VoteResponse | undefined) => {
+      expect(response).toBeInstanceOf(Object);
+      expect(response).toEqual(mockResponse.data.addNegativeVote);
+
+      done();
+    });
+
+    apolloController.expectOne(negativeVoteOperation.mutationQuery).flush(mockResponse);
+    apolloController.verify();
+  });
+
+  it('should update positive votes', (done: DoneFn) => {
+    const mockResponse = { data: { addPositiveVote: mockVoteUpdateResponse } };
+
+    service.updatePositiveVotes(mockVoteUpdateResponse.id).subscribe((response: VoteResponse | undefined) => {
+      expect(response).toBeInstanceOf(Object);
+      expect(response).toEqual(mockResponse.data.addPositiveVote);
+
+      done();
+    });
+
+    apolloController.expectOne(positiveVoteOperation.mutationQuery).flush(mockResponse);
     apolloController.verify();
   });
 });
