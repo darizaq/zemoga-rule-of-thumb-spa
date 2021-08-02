@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
+import { ImageHelperService } from '@core/services/image-helper/image-helper.service';
+import { ImgSrcsetPipe } from '@shared/pipes/img-srcset/img-srcset.pipe';
 import { RulingCardComponent } from './ruling-card.component';
 
 describe('RulingCardComponent', () => {
@@ -18,7 +20,8 @@ describe('RulingCardComponent', () => {
           }
         })
       ],
-      declarations: [RulingCardComponent],
+      declarations: [ImgSrcsetPipe, RulingCardComponent],
+      providers: [ImageHelperService],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   });
@@ -31,6 +34,12 @@ describe('RulingCardComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should set image resources array', () => {
+    const expectedImageResources = 2;
+
+    expect(component.imageResources.length).toEqual(expectedImageResources);
   });
 
   it('should update positive vote', () => {

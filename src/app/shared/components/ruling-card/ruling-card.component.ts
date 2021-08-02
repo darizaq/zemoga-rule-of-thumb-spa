@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 
+import { ImageHelperService } from '@core/services/image-helper/image-helper.service';
+import { ImageResource, RulingCard } from '@core/interfaces';
 import { mockRulingCard } from '@mocks/ruling-card.mock';
-import { RulingCard } from '@core/interfaces';
-import { rulingsConstants } from '@shared/components/rulings/rulings.constants';
 import { rulingCardConstants as constants } from './ruling-card.constants';
+import { rulingsConstants } from '@shared/components/rulings/rulings.constants';
 
 @Component({
   selector: 'zmg-ruling-card',
@@ -11,15 +12,16 @@ import { rulingCardConstants as constants } from './ruling-card.constants';
   styleUrls: ['./ruling-card.component.scss', './ruling-card-list-type.component.scss']
 })
 export class RulingCardComponent {
-  public imagePath = constants.imageBasePath;
+  public imageResources: Array<ImageResource> = [];
   public isPositiveState = false;
   public ruling: RulingCard;
   public viewType = rulingsConstants.viewType;
 
   @Input() public type = this.viewType.grid;
 
-  constructor() {
+  constructor(private imageHelperService: ImageHelperService) {
     this.ruling = mockRulingCard;
+    this.imageResources = this.imageHelperService.getImageResources(this.ruling.photo, constants.imageBasePath);
 
     this.updatePositiveState();
   }
