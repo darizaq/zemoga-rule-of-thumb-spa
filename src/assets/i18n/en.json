@@ -6,6 +6,9 @@
   "errorMessage": {
     "default": "An error has occurred!"
   },
+  "notFound": {
+    "message": "There's nothing to see here :("
+  },
   "poll": {
     "status": "{{timeAgo}} in {{category}}",
     "thanks": "Thank you for your vote!",

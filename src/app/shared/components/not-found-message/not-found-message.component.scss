@@ -1,0 +1,24 @@
+@import 'abstracts';
+
+:host {
+  width: 100%;
+}
+
+.not-found {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  &__code {
+    @include font(8rem, 12rem);
+  }
+
+  &__jumping {
+    display: inline-flex;
+    transform-origin: 0 0;
+  }
+
+  &__message {
+    @include font(1.5rem, 3rem);
+  }
+}
