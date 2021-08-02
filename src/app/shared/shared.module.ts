@@ -4,6 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { BannerMainComponent } from './components/banner-main/banner-main.component';
 import { BannerSupplementalComponent } from './components/banner-supplemental/banner-supplemental.component';
+import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { FeaturedCardComponent } from './components/featured-card/featured-card.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { GaugeBarComponent } from './components/gauge-bar/gauge-bar.component';
@@ -20,6 +21,7 @@ import { SelectComponent } from './components/select/select.component';
   declarations: [
     BannerMainComponent,
     BannerSupplementalComponent,
+    ErrorMessageComponent,
     FeaturedCardComponent,
     FooterComponent,
     GaugeBarComponent,
@@ -34,6 +36,7 @@ import { SelectComponent } from './components/select/select.component';
   exports: [
     BannerMainComponent,
     BannerSupplementalComponent,
+    ErrorMessageComponent,
     FeaturedCardComponent,
     FooterComponent,
     GaugeBarComponent,
