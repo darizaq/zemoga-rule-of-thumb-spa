@@ -33,12 +33,9 @@
 
   &__desc {
     @include font(1.25rem, 1.41rem, 300);
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
-    -webkit-line-clamp: 6;
+    @include multiline-text-ellipsis(6);
     margin: 1rem 0;
     max-height: 10.5rem;
-    overflow: hidden;
     padding-right: 5px;
     text-overflow: ellipsis;
   }
