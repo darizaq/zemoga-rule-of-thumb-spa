@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 import { ImageHelperService } from '@core/services/image-helper/image-helper.service';
-import { ImageResource, RulingCard } from '@core/interfaces';
-import { mockRulingCard } from '@mocks/ruling-card.mock';
+import { ImageResource, RulingCard, VoteResponse } from '@core/interfaces';
 import { rulingCardConstants as constants } from './ruling-card.constants';
 import { rulingsConstants } from '@shared/components/rulings/rulings.constants';
+import { RulingsService } from '@core/services/rulings/rulings.service';
 
 @Component({
   selector: 'zmg-ruling-card',
@@ -14,16 +14,26 @@ import { rulingsConstants } from '@shared/components/rulings/rulings.constants';
 export class RulingCardComponent {
   public imageResources: Array<ImageResource> = [];
   public isPositiveState = false;
-  public ruling: RulingCard;
   public viewType = rulingsConstants.viewType;
+
+  private rulingCard: RulingCard = {} as RulingCard;
 
   @Input() public type = this.viewType.grid;
 
-  constructor(private imageHelperService: ImageHelperService) {
-    this.ruling = mockRulingCard;
-    this.imageResources = this.imageHelperService.getImageResources(this.ruling.photo, constants.imageBasePath);
+  constructor(private imageHelperService: ImageHelperService, private rulingsService: RulingsService) {}
+
+  @Input()
+  public set ruling(rulingCard: RulingCard) {
+    const { photo } = rulingCard;
+
+    this.imageResources = this.imageHelperService.getImageResources(photo, constants.imageBasePath);
+    this.rulingCard = rulingCard;
 
     this.updatePositiveState();
+  }
+
+  public get ruling(): RulingCard {
+    return this.rulingCard;
   }
 
   /**
@@ -32,15 +42,34 @@ export class RulingCardComponent {
    * @param isPositiveVote - Vote value
    */
   public updateVotes(isPositiveVote: boolean): void {
-    isPositiveVote ? (this.ruling.votes.positive += 1) : (this.ruling.votes.negative += 1);
+    const { id } = this.rulingCard;
+    const operation = isPositiveVote
+      ? this.rulingsService.updatePositiveVotes(id)
+      : this.rulingsService.updateNegativeVotes(id);
 
-    this.updatePositiveState();
+    operation.subscribe((response: VoteResponse | undefined) => this.handleVoteResponse(response));
+  }
+
+  /**
+   * Handles vote operation response
+   *
+   * @param response - API response
+   */
+  private handleVoteResponse(response: VoteResponse | undefined): void {
+    const { votes } = this.rulingCard;
+
+    if (response) {
+      votes.negative = response.positiveVotes;
+      votes.positive = response.negativeVotes;
+
+      this.updatePositiveState();
+    }
   }
 
   /**
    * Updates positive state for ruling card
    */
   private updatePositiveState(): void {
-    this.isPositiveState = mockRulingCard.votes.positive >= mockRulingCard.votes.negative;
+    this.isPositiveState = this.rulingCard.votes.positive >= this.rulingCard.votes.negative;
   }
 }

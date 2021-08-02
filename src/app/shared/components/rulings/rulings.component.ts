@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
+import { RulingCard, SelectItem } from '@core/interfaces';
 import { rulingsConstants as constants } from './rulings.constants';
-import { SelectItem } from '@core/interfaces';
 
 @Component({
   selector: 'zmg-rulings',
@@ -9,9 +9,9 @@ import { SelectItem } from '@core/interfaces';
   styleUrls: ['./rulings.component.scss']
 })
 export class RulingsComponent {
+  @Input() public rulings: Array<RulingCard> = [];
+
   public currentViewType: SelectItem;
-  // eslint-disable-next-line
-  public rulings = new Array(6);
   public viewOptions: Array<SelectItem> = constants.viewOptions;
   public viewType = constants.viewType;
 
@@ -26,5 +26,16 @@ export class RulingsComponent {
    */
   public onViewOptionChange(item: SelectItem): void {
     this.currentViewType = item;
+  }
+
+  /**
+   * Helper NgFor trackBy method
+   *
+   * @param index - Item index
+   * @param ruling - Ruling item
+   * @returns Ruling item id
+   */
+  public rulingsTrackByFunction(index: number, ruling: RulingCard): string {
+    return ruling.id;
   }
 }

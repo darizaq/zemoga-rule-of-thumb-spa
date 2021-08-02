@@ -1,4 +1,4 @@
-export interface RulingCard {
+export interface RulingItemResponse {
   category: string;
   description: string;
   id: string;
@@ -8,8 +8,6 @@ export interface RulingCard {
     resolution1x: string;
     resolution2x: string;
   };
-  votes: {
-    negative: number;
-    positive: number;
-  };
+  negativeVotes: number;
+  positiveVotes: number;
 }

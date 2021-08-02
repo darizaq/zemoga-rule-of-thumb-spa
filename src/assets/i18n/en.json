@@ -3,6 +3,9 @@
     "thumbsUp": "thumbs up",
     "thumbsDown": "thumbs down"
   },
+  "errorMessage": {
+    "default": "An error has occurred!"
+  },
   "poll": {
     "status": "{{timeAgo}} in {{category}}",
     "thanks": "Thank you for your vote!",

@@ -1,0 +1,7 @@
+@import 'abstracts';
+
+.error-message {
+  @include font(2rem, 3rem);
+  display: flex;
+  justify-content: center;
+}
