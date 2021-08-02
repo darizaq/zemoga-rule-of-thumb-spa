@@ -80,11 +80,12 @@
 
       &-title {
         @include font(to-rem(30px, $tablet-rem), to-rem(36px, $tablet-rem));
+        margin-left: 0;
       }
 
       &-description {
         @include font(to-rem(15px, $tablet-rem), to-rem(18px, $tablet-rem));
-        margin-bottom: to-rem(12px, $tablet-rem);
+        margin: 0 1rem to-rem(12px, $tablet-rem) 0;
       }
     }
 
