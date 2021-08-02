@@ -3,7 +3,8 @@
 <section class="max-centered">
   <zmg-banner-main></zmg-banner-main>
   <main role="main">
-    <zmg-rulings></zmg-rulings>
+    <zmg-error-message *ngIf="hasError"></zmg-error-message>
+    <zmg-rulings *ngIf="!hasError && items.length"></zmg-rulings>
   </main>
   <zmg-banner-supplemental></zmg-banner-supplemental>
   <hr role="separator" />
