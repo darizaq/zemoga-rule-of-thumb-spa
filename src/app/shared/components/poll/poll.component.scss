@@ -6,7 +6,7 @@
   width: 100%;
 
   &__eyebrow {
-    @include font(to-rem(12px), to-rem(14px));
+    @include font(to-rem(12px), to-rem(14px), bold);
     text-align: right;
   }
 
