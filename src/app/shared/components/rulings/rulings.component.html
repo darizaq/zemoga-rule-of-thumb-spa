@@ -14,7 +14,7 @@
       'rulings__items-container--list': currentViewType.value === viewType.list
     }"
   >
-    <div class="rulings__item" *ngFor="let ruling of rulings">
+    <div class="rulings__item" *ngFor="let ruling of rulings; trackBy: rulingsTrackByFunction">
       <zmg-ruling-card [type]="currentViewType.value"></zmg-ruling-card>
     </div>
   </div>
