@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { httpTranslateLoaderFactory } from '@core/factories/http-translate-loader.factory';
 import { ImageHelperService } from '@core/services/image-helper/image-helper.service';
+import { RulingsService } from '@core/services/rulings/rulings.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,7 +34,8 @@ import { ImageHelperService } from '@core/services/image-helper/image-helper.ser
       useFactory: apolloOptionsFactory,
       deps: [HttpLink, TransferState]
     },
-    ImageHelperService
+    ImageHelperService,
+    RulingsService
   ],
   bootstrap: [AppComponent]
 })
