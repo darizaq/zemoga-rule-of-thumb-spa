@@ -1,7 +1,7 @@
 @import 'abstracts';
 
-@include breakpoint($tablet-breakpoint) {
-  .ruling-card__list-type {
+.ruling-card__list-type {
+  @include breakpoint($tablet-breakpoint) {
     padding-top: 0;
 
     .ruling-card {
@@ -49,10 +49,8 @@
       }
     }
   }
-}
 
-@include breakpoint($desktop-breakpoint) {
-  .ruling-card__list-type {
+  @include breakpoint($desktop-breakpoint) {
     .ruling-card {
       &__figure {
         width: 24%;

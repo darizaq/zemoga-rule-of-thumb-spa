@@ -3,5 +3,15 @@
 .error-container {
   align-items: center;
   display: flex;
+  margin: 0 1rem;
+  max-width: 1100px;
   min-height: 85vh;
+
+  @include breakpoint($tablet-breakpoint) {
+    margin: 0 to-rem(20px, $tablet-rem);
+  }
+
+  @include breakpoint($desktop-breakpoint) {
+    margin: 0 auto;
+  }
 }

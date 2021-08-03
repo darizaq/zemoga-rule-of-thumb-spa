@@ -16,8 +16,8 @@ class TranslateServerLoader implements TranslateLoader {
   /**
    * Loads translation data on server side
    *
-   * @param   lang Translation language
-   * @returns      Observable for translation data
+   * @param lang - Translation language
+   * @returns Observable for translation data
    */
   public getTranslation(lang: string): Observable<Record<string, string>> {
     return new Observable((observer: Subscriber<Record<string, string>>) => {

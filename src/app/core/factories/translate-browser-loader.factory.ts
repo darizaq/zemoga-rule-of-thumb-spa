@@ -14,8 +14,8 @@ class TranslateBrowserLoader implements TranslateLoader {
    * Loads translation data on client side
    * Requests translation file only if translation data is not loaded in transfer state
    *
-   * @param   lang Translation language
-   * @returns      Observable for translation data
+   * @param lang - Translation language
+   * @returns Observable for translation data
    */
   public getTranslation(lang: string): Observable<Record<string, string>> {
     const stateKey: StateKey<Record<string, string>> = makeStateKey<Record<string, string>>(

@@ -8,4 +8,28 @@
     <loc>http://localhost:4000/404/</loc>
     <lastmod>2021-08-02</lastmod>
   </url>
+  <url>
+    <loc>http://localhost:4000/past-trials/</loc>
+    <lastmod>2021-08-02</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:4000/how-it-works/</loc>
+    <lastmod>2021-08-02</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:4000/user-sesion/</loc>
+    <lastmod>2021-08-02</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:4000/terms-and-conditions/</loc>
+    <lastmod>2021-08-02</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:4000/privacy-policy/</loc>
+    <lastmod>2021-08-02</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:4000/contact-us/</loc>
+    <lastmod>2021-08-02</lastmod>
+  </url>
 </urlset>
