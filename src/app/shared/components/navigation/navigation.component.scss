@@ -19,7 +19,7 @@
   }
 
   &__hamburger {
-    @include font(25px, 25px);
+    @include font(to-rem(25px), to-rem(25px));
     color: var(--color-nav-hamburger);
     height: 20px;
     pointer-events: all;
@@ -95,6 +95,10 @@
 
   @include breakpoint($tablet-breakpoint) {
     padding: 0 to-rem(20px, $tablet-rem);
+
+    &__hamburger {
+      @include font(to-rem(25px, $tablet-rem), to-rem(25px, $tablet-rem));
+    }
   }
 
   @include breakpoint($desktop-breakpoint) {
