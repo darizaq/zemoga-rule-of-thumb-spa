@@ -10,8 +10,7 @@
     url('/assets/fonts/zemoga-icons/zemoga-icons.svg?y7fjk0#zemoga-icons') format('svg');
 }
 
-[class^='zmg-icon-'],
-[class*=' zmg-icon-'] {
+.zmg-icon {
   font-family: 'zemoga-icons' !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -21,40 +20,40 @@
   line-height: 1;
   speak: never;
   text-transform: none;
-}
 
-.zmg-icon-close::before {
-  content: '\e900';
-}
+  &-close::before {
+    content: '\e900';
+  }
 
-.zmg-icon-facebook::before {
-  content: '\e901';
-}
+  &-facebook::before {
+    content: '\e901';
+  }
 
-.zmg-icon-hamburger::before {
-  content: '\e902';
-}
+  &-hamburger::before {
+    content: '\e902';
+  }
 
-.zmg-icon-search::before {
-  content: '\e903';
-}
+  &-search::before {
+    content: '\e903';
+  }
 
-.zmg-icon-thumbs-down::before {
-  content: '\e904';
-}
+  &-thumbs-down::before {
+    content: '\e904';
+  }
 
-.zmg-icon-thumbs-up::before {
-  content: '\e905';
-}
+  &-thumbs-up::before {
+    content: '\e905';
+  }
 
-.zmg-icon-twitter::before {
-  content: '\e906';
-}
+  &-twitter::before {
+    content: '\e906';
+  }
 
-.zmg-icon-wikipedia::before {
-  content: '\e907';
-}
+  &-wikipedia::before {
+    content: '\e907';
+  }
 
-.zmg-icon-triangle-down::before {
-  content: '\e908';
+  &-triangle-down::before {
+    content: '\e908';
+  }
 }

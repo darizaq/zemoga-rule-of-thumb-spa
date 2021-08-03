@@ -8,11 +8,15 @@
   overflow: hidden;
   position: relative;
 
-  &__background {
+  &__figure {
     height: 100%;
     left: -35vw;
-    object-fit: cover;
     position: absolute;
+  }
+
+  &__background {
+    height: 100%;
+    object-fit: cover;
     width: 160vw;
   }
 
@@ -83,9 +87,12 @@
   @include breakpoint($tablet-breakpoint) {
     max-height: 38rem;
 
-    &__background {
+    &__figure {
       left: 0;
       top: 0;
+    }
+
+    &__background {
       width: 110vw;
     }
 
@@ -97,10 +104,13 @@
   @include breakpoint($desktop-breakpoint) {
     min-height: 700px;
 
-    &__background {
-      height: auto;
+    &__figure {
       left: 0;
       top: -2rem;
+    }
+
+    &__background {
+      height: auto;
       width: 100vw;
     }
 

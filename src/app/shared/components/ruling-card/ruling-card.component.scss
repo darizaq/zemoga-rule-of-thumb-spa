@@ -59,6 +59,7 @@
     left: to-rem(-30px);
     position: absolute;
     text-align: center;
+    transition: background-color 0.5s;
     width: to-rem(30px);
 
     &--up {

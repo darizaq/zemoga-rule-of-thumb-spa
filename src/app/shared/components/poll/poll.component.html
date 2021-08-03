@@ -12,7 +12,7 @@
         [ngClass]="{ 'icon-button--active': isPositiveVote && filled }"
         (click)="fillOutPoll(true)"
       >
-        <i class="zmg-icon-thumbs-up" aria-hidden="true"></i>
+        <i class="zmg-icon zmg-icon-thumbs-up" aria-hidden="true"></i>
       </button>
       <button
         class="icon-button icon-button--negative"
@@ -20,7 +20,7 @@
         [ngClass]="{ 'icon-button--active': !isPositiveVote && filled }"
         (click)="fillOutPoll(false)"
       >
-        <i class="zmg-icon-thumbs-down" aria-hidden="true"></i>
+        <i class="zmg-icon zmg-icon-thumbs-down" aria-hidden="true"></i>
       </button>
     </div>
     <button class="default-button" [disabled]="!filled && !submitted" (click)="voteAction()">

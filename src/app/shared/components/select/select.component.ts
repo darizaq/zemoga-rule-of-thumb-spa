@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
 
 import { SelectItem } from '@core/interfaces';
 
@@ -15,6 +15,8 @@ export class SelectComponent {
 
   private selectItems: Array<SelectItem> = [];
 
+  constructor(private elementRef: ElementRef) {}
+
   @Input()
   public set items(selectItems: Array<SelectItem>) {
     [this.activeItem] = selectItems;
@@ -24,6 +26,18 @@ export class SelectComponent {
 
   public get items(): Array<SelectItem> {
     return this.selectItems;
+  }
+
+  /**
+   * Document click event listener to handle clicks outside component
+   *
+   * @param event - Click event object
+   */
+  @HostListener('document:click', ['$event'])
+  public onClickOutside(event: Event): void {
+    if (!(this.elementRef.nativeElement as HTMLElement).contains(event.target as Node)) {
+      this.open = false;
+    }
   }
 
   /**

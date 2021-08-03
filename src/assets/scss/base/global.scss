@@ -1,7 +1,7 @@
 html,
 body {
   @include font($mobile-rem, initial);
-  background-color: var(--color-white);
+  background-color: var(--color-body-background);
   font-family: var(--font-family);
   width: 100%;
 }
@@ -12,12 +12,12 @@ body {
 
 a,
 a:visited {
-  color: var(--color-white);
+  color: var(--color-link);
 }
 
-hr[role='separator'] {
+.separator {
   border: 0 none;
-  border-bottom: 2px dotted var(--color-dark-gray);
+  border-bottom: 2px dotted var(--color-separator-border);
   margin: 1.5rem 1rem;
 }
 
@@ -25,7 +25,7 @@ hr[role='separator'] {
   display: contents;
 }
 
-main[role='main'] {
+.main-container {
   margin-top: 2rem;
   padding: 0 1rem;
 }
@@ -33,7 +33,7 @@ main[role='main'] {
 main h2,
 main h3,
 main h4 {
-  color: var(--color-dark-gray);
+  color: var(--color-heading);
   font-weight: 300;
 }
 
@@ -55,7 +55,7 @@ main h2 {
     font-size: $desktop-rem;
   }
 
-  hr[role='separator'] {
+  .separator {
     margin: 2rem 0;
   }
 
@@ -68,12 +68,12 @@ main h2 {
     width: 100%;
 
     > *,
-    > hr[role='separator'] {
+    > .separator {
       margin-left: 0;
       margin-right: 0;
     }
 
-    main[role='main'] {
+    .main-container {
       padding: 0;
     }
   }

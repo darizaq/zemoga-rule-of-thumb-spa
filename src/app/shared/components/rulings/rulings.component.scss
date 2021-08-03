@@ -21,19 +21,25 @@
 
   &__items-container {
     display: flex;
-    margin: 0 to-rem(-6px);
     overflow: auto;
   }
 
   &__item {
-    flex: 1 0 to-rem(300px);
-    margin: 0 to-rem(6px);
-    width: to-rem(300px);
+    flex: 1 0 100%;
+    max-width: to-rem(300px);
+
+    + .rulings__item {
+      margin-left: to-rem(12px);
+    }
   }
 
   @include breakpoint($tablet-breakpoint) {
     &__view-select {
       display: inline-flex;
+    }
+
+    &__item {
+      max-width: initial;
     }
 
     &__items-container {

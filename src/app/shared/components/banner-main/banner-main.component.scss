@@ -1,14 +1,9 @@
 @import 'abstracts';
 
 .banner {
-  align-items: center;
   background-color: var(--color-banner-main-background);
-  display: flex;
-  justify-content: space-between;
   margin: 1rem;
-  overflow: hidden;
   padding: 1rem;
-  position: relative;
 
   &__left {
     flex-basis: 40%;
