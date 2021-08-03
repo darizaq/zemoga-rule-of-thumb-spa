@@ -37,7 +37,7 @@
 
     ul {
       display: flex;
-      margin-top: 1rem;
+      margin-top: 0.5rem;
     }
 
     li {
@@ -61,7 +61,7 @@
       }
 
       li {
-        font-size: 1rem;
+        @include font(to-rem(18px, $tablet-rem), to-rem(36px, $tablet-rem));
         margin-right: 2rem;
         padding: 0;
       }
@@ -71,8 +71,8 @@
       align-items: center;
 
       span {
+        @include font(to-rem(17.5px, $tablet-rem), to-rem(21px, $tablet-rem));
         color: var(--color-footer-social-label-lg);
-        font-size: 0.833rem;
         margin-right: 1rem;
       }
 
@@ -81,7 +81,7 @@
       }
 
       ul {
-        margin-top: to-rem(3px, $tablet-rem);
+        margin-top: 0;
       }
     }
   }
@@ -91,9 +91,17 @@
       ul {
         margin-left: 0;
       }
+
+      li {
+        @include font(1rem, 2rem);
+      }
     }
 
     &__social {
+      span {
+        @include font(to-rem(15px, $desktop-rem), to-rem(18px, $desktop-rem));
+      }
+
       li {
         margin-right: 0;
 
