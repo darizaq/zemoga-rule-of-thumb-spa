@@ -53,7 +53,7 @@
 
   &__thumbs-indicator {
     @include font(to-rem(16px), to-rem(30px));
-    bottom: 0;
+    bottom: to-rem(4px);
     display: block;
     height: to-rem(30px);
     left: to-rem(-30px);
@@ -92,6 +92,7 @@
 
     &__thumbs-indicator {
       @include font(to-rem(16px, $tablet-rem), to-rem(30px, $tablet-rem));
+      bottom: to-rem(4px, $tablet-rem);
       height: to-rem(30px, $tablet-rem);
       left: to-rem(-36px, $tablet-rem);
       width: to-rem(30px, $tablet-rem);
@@ -119,6 +120,7 @@
 
     &__thumbs-indicator {
       @include font(to-rem(16px, $desktop-rem), to-rem(30px, $desktop-rem));
+      bottom: to-rem(4px, $desktop-rem);
       height: to-rem(30px, $desktop-rem);
       left: to-rem(-36px, $desktop-rem);
       width: to-rem(30px, $desktop-rem);
