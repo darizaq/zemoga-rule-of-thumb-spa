@@ -25,14 +25,12 @@
   }
 
   &__title {
-    font-size: 3rem;
-    font-weight: 400;
-    line-height: 1;
+    @include font(3rem, 1, 400);
     margin: 0;
   }
 
   &__desc {
-    @include font(1.25rem, 1.41rem, 300);
+    @include font(15px, 17px, 300);
     @include multiline-text-ellipsis(6);
     margin: 1rem 0;
     max-height: 10.5rem;
@@ -41,7 +39,7 @@
   }
 
   &__cta {
-    font-weight: 700;
+    @include font(to-rem(12px), to-rem(14px), 700);
     margin: 1rem 0;
   }
 
@@ -56,7 +54,7 @@
     }
 
     .zmg-icon {
-      font-size: 1.25rem;
+      @include font(to-rem(16px), to-rem(16px));
     }
   }
 
@@ -80,13 +78,19 @@
       padding: 2rem 1.5rem;
     }
 
+    &__title {
+      @include font(to-rem(28px, $tablet-rem), to-rem(36px, $tablet-rem), 400);
+    }
+
     &__desc {
-      @include font(1.25rem, 1.5rem);
+      @include font(to-rem(17.5px, $tablet-rem), to-rem(21px, $tablet-rem), 300);
+      max-width: 95%;
       padding-right: 0;
     }
 
     &__more-info {
-      display: inline-block;
+      align-items: center;
+      display: flex;
       font-weight: 300;
       margin: 0;
 
@@ -95,8 +99,17 @@
       }
     }
 
+    &__cta {
+      @include font(to-rem(21px, $tablet-rem), to-rem(25px, $tablet-rem), 700);
+      margin-bottom: to-rem(28px, $tablet-rem);
+    }
+
     &__buttons {
       margin: 0 -1.5rem -2rem;
+
+      .zmg-icon {
+        @include font(to-rem(21px, $tablet-rem), to-rem(21px, $tablet-rem));
+      }
     }
   }
 
@@ -110,8 +123,12 @@
       padding: 2rem 1.5rem;
     }
 
+    &__title {
+      @include font(to-rem(54px, $desktop-rem), 1, 400);
+    }
+
     &__desc {
-      @include font(1.33rem, 1.61rem, 300);
+      @include font(to-rem(24px, $desktop-rem), to-rem(29px, $desktop-rem), 300);
       margin: 2rem 0 1rem;
       max-width: 80%;
     }
@@ -121,7 +138,7 @@
     }
 
     &__cta {
-      font-size: 1.5rem;
+      @include font(to-rem(27px, $desktop-rem), to-rem(32px, $desktop-rem), 700);
       margin: 1rem 0 2rem;
     }
 
@@ -133,8 +150,8 @@
       }
 
       .zmg-icon {
-        @include font(2rem, 2.2rem);
-        display: inline-flex;
+        @include font(to-rem(36px, $desktop-rem), to-rem(36px, $desktop-rem));
+        display: inline-block;
         margin: 1.3rem 0;
       }
     }
