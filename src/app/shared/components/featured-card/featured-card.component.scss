@@ -30,7 +30,7 @@
   }
 
   &__desc {
-    @include font(15px, 17px, 300);
+    @include font(to-rem(15px), to-rem(17px), 300);
     @include multiline-text-ellipsis(6);
     margin: 1rem 0;
     max-height: 10.5rem;

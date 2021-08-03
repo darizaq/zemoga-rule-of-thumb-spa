@@ -1,6 +1,6 @@
 # Zemoga Rule Of Thumb Spa
 
-Angular SPA to give your opinion with a vote for any calebrity listed.
+Angular SPA to give your opinion with a vote for any celebrity listed.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
 
@@ -29,23 +29,34 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development notes
 
-Some of the tools that I used and configured in the application are the following:
+Some tools that I used and configured in the application are the following:
 
 - Mobile-first approach was used to develop the application
-- CSS preprocesor was used (specifically SCSS)
+- CSS preprocessor was used (specifically SCSS)
 - ESLint was used for code style validation
 - StyleLint was used for SCSS style validation
-- Prettier was used to have unified code formating across the application
+- Prettier was used to have unified code formatting across the application
 - Husky pre-commit hook was added to run prettier, linters and unit test
-- Nightwatch was used to execute end to end test over the application
+- Nightwatch was used to execute end-to-end test over the application
 - Dockerfile was added to create a containerized version of the application
 - AWS AppSync was used to expose a GraphQL API to retrieve rulings list and store votes for every celebrity listed
 - Environment variables file includes values for API integration (For testing purposes this file was included, on a real project this shouldn't be committed)
 
-Regarding SEO and accessibility Lighthouse was used to test the application
+Regarding quality
 
-- SEO score: 91%
-- Accessibility score: 100%
+- Unit tests coverage for the code is
+
+| Statements | Branches | Functions | Lines  |
+| ---------- | -------- | --------- | ------ |
+| 99.42%     | 82.5%    | 98%       | 99.34% |
+
+- Linters to avoid static code errors and keeps a unified code styling
+
+- End-to-end test added to test user interaction with the application
+
+- SEO and accessibility tested with Lighthouse
+  - SEO score: 91%
+  - Accessibility score: 100%
 
 ## Commands and technical notes
 
