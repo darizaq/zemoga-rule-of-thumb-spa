@@ -50,9 +50,9 @@ Regarding quality
 | ---------- | -------- | --------- | ------ |
 | 99.42%     | 82.5%    | 98%       | 99.34% |
 
-- Linters to avoid static code errors and keeps an unified code styling
+- Linters to avoid static code errors and keeps a unified code styling
 
-- End to end test added to test user interaction with the application
+- End-to-end test added to test user interaction with the application
 
 - SEO and accessibility tested with Lighthouse
   - SEO score: 91%
