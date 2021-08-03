@@ -89,7 +89,10 @@ export class RulingsService {
       id,
       lastUpdated,
       name,
-      photo,
+      photo: {
+        resolution1x: photo.resolution1x,
+        resolution2x: photo.resolution2x
+      },
       votes: {
         negative: responseItem.negativeVotes,
         positive: responseItem.positiveVotes
