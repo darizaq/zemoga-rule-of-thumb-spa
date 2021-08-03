@@ -8,9 +8,9 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { apolloOptionsFactory } from '@core/factories/apollo-options.factory';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { httpTranslateLoaderFactory } from '@core/factories/http-translate-loader.factory';
 import { ImageHelperService } from '@core/services/image-helper/image-helper.service';
 import { RulingsService } from '@core/services/rulings/rulings.service';
+import { translateBrowserLoaderFactory } from '@core/factories/translate-browser-loader.factory';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,8 +23,8 @@ import { RulingsService } from '@core/services/rulings/rulings.service';
       defaultLanguage: 'en',
       loader: {
         provide: TranslateLoader,
-        useFactory: httpTranslateLoaderFactory,
-        deps: [HttpClient]
+        useFactory: translateBrowserLoaderFactory,
+        deps: [HttpClient, TransferState]
       }
     })
   ],
