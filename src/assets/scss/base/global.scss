@@ -47,6 +47,14 @@ main h2 {
   body {
     font-size: $tablet-rem;
   }
+
+  .main-container {
+    padding: 0 to-rem(20px, $tablet-rem);
+  }
+
+  .separator {
+    margin: 1.5rem to-rem(20px, $tablet-rem);
+  }
 }
 
 @include breakpoint($desktop-breakpoint) {

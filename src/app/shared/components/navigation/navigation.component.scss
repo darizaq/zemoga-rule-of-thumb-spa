@@ -93,6 +93,10 @@
     }
   }
 
+  @include breakpoint($tablet-breakpoint) {
+    padding: 0 to-rem(20px, $tablet-rem);
+  }
+
   @include breakpoint($desktop-breakpoint) {
     min-height: 22vh;
 

@@ -48,6 +48,7 @@
   @include breakpoint($tablet-breakpoint) {
     flex-direction: row;
     justify-content: space-between;
+    margin: 2rem to-rem(20px, $tablet-rem) 1rem;
     padding: to-rem(26px, $tablet-rem) 2rem;
 
     &__background {

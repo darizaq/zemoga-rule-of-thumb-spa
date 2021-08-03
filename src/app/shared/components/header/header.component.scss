@@ -97,6 +97,7 @@
     }
 
     &__featured-card {
+      left: to-rem(20px, $tablet-rem);
       width: 48vw;
     }
   }
