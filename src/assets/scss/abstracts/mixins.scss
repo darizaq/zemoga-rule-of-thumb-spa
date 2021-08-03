@@ -1,0 +1,18 @@
+@mixin font($size, $line-height: inherit, $weight: 400) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+@mixin breakpoint($value) {
+  @media only screen and (min-width: #{$value}) {
+    @content;
+  }
+}
+
+@mixin multiline-text-ellipsis($lines: 1) {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}

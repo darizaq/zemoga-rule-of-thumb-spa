@@ -1,0 +1,116 @@
+@import 'abstracts';
+
+.footer {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1rem 3rem;
+
+  &__links {
+    li {
+      font-size: 1.25rem;
+      padding: 0.5rem 0;
+
+      a {
+        color: var(--color-footer-link);
+        text-decoration: none;
+
+        &:hover {
+          color: var(--color-footer-link-hover);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__social {
+    text-align: right;
+
+    span {
+      color: var(--color-footer-social-label);
+      font-size: 1.25rem;
+    }
+
+    .zmg-icon {
+      color: var(--color-footer-social-icon);
+      font-size: to-rem(24px);
+    }
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 0.5rem;
+    }
+
+    li + li {
+      margin-left: 1rem;
+    }
+  }
+
+  @include breakpoint($tablet-breakpoint) {
+    align-items: flex-start;
+    margin: 0 to-rem(20px, $tablet-rem) 3rem;
+
+    &__links ul,
+    &__social {
+      display: flex;
+    }
+
+    &__links {
+      li {
+        @include font(to-rem(18px, $tablet-rem), to-rem(36px, $tablet-rem));
+        margin-right: 2rem;
+        padding: 0;
+      }
+    }
+
+    &__social {
+      align-items: center;
+
+      span {
+        @include font(to-rem(17.5px, $tablet-rem), to-rem(21px, $tablet-rem));
+        color: var(--color-footer-social-label-lg);
+      }
+
+      .zmg-icon {
+        font-size: to-rem(24px, $tablet-rem);
+      }
+
+      ul {
+        margin: 0 0 0 1rem;
+      }
+    }
+  }
+
+  @include breakpoint($desktop-breakpoint) {
+    margin: 0 0 3rem;
+
+    &__links {
+      ul {
+        margin-left: 0;
+      }
+
+      li {
+        @include font(1rem, 2rem);
+      }
+    }
+
+    &__social {
+      span {
+        @include font(to-rem(15px, $desktop-rem), to-rem(18px, $desktop-rem));
+      }
+
+      li {
+        margin-right: 0;
+
+        + li {
+          margin-left: 1rem;
+        }
+      }
+
+      .zmg-icon {
+        font-size: to-rem(24px, $desktop-rem);
+      }
+    }
+  }
+}

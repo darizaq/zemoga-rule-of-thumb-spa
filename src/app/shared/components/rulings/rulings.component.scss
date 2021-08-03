@@ -1,0 +1,90 @@
+@import 'abstracts';
+
+.rulings {
+  overflow: hidden;
+
+  &__heading {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    @include font(to-rem(24px), to-rem(29px), 300);
+    color: var(--color-rulings-title);
+  }
+
+  &__view-select {
+    display: none;
+  }
+
+  &__items-container {
+    display: flex;
+    overflow: auto;
+  }
+
+  &__item {
+    flex: 1 0 100%;
+    max-width: to-rem(300px);
+
+    + .rulings__item {
+      margin-left: to-rem(12px);
+    }
+  }
+
+  @include breakpoint($tablet-breakpoint) {
+    &__view-select {
+      display: inline-flex;
+    }
+
+    &__item {
+      max-width: initial;
+    }
+
+    &__items-container {
+      flex-wrap: wrap;
+
+      &--grid {
+        margin: to-rem(-10px, $tablet-rem);
+
+        .rulings__item {
+          flex-basis: 50%;
+          margin: 0;
+          padding: to-rem(10px, $tablet-rem);
+          width: 50%;
+        }
+      }
+
+      &--list {
+        margin: 0;
+
+        .rulings__item {
+          flex-basis: 100%;
+          margin: 0;
+          width: 100%;
+
+          + .rulings__item {
+            margin: to-rem(14px, $tablet-rem) 0 0;
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoint($desktop-breakpoint) {
+    &__title {
+      @include font(to-rem(45px, $desktop-rem), to-rem(54px, $desktop-rem), 300);
+    }
+
+    &__items-container--grid {
+      margin: to-rem(-13px, $desktop-rem);
+
+      .rulings__item {
+        flex-basis: 33.3%;
+        max-width: 33.3%;
+        padding: to-rem(13px, $desktop-rem);
+      }
+    }
+  }
+}

@@ -1,0 +1,159 @@
+@import 'abstracts';
+
+.featured-card {
+  &__glass-background {
+    background: center no-repeat var(--gradient-featured-card-glass-background),
+      -25vw 0/160vw no-repeat url('/assets/images/celebrities/pope-francis.png');
+    filter: blur(1rem);
+    height: 140%;
+    left: -20%;
+    position: absolute;
+    top: -20%;
+    width: 140%;
+  }
+
+  &__content {
+    color: var(--color-featured-card-content);
+    padding: 1rem;
+    position: relative;
+  }
+
+  &__hairline {
+    font-weight: 300;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  &__title {
+    @include font(3rem, 1, 400);
+    margin: 0;
+  }
+
+  &__desc {
+    @include font(to-rem(15px), to-rem(17px), 300);
+    @include multiline-text-ellipsis(6);
+    margin: 1rem 0;
+    max-height: 10.5rem;
+    padding-right: 5px;
+    text-overflow: ellipsis;
+  }
+
+  &__cta {
+    @include font(to-rem(12px), to-rem(14px), 700);
+    margin: 1rem 0;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -1rem -1rem;
+
+    .icon-button {
+      height: 2.75rem;
+      width: 50%;
+    }
+
+    .zmg-icon {
+      @include font(to-rem(16px), to-rem(16px));
+    }
+  }
+
+  &__more-info {
+    display: none;
+  }
+
+  &__more-info-icon {
+    @include font(1.5rem, 0.75rem, 300);
+    margin-right: 0.5rem;
+    text-decoration: none;
+  }
+
+  @include breakpoint($tablet-breakpoint) {
+    &__glass-background {
+      background: center no-repeat var(--gradient-featured-card-glass-background),
+        7vw -6.5rem/115vw auto no-repeat url('/assets/images/celebrities/pope-francis.png');
+    }
+
+    &__content {
+      padding: 2rem 1.5rem;
+    }
+
+    &__title {
+      @include font(to-rem(28px, $tablet-rem), to-rem(36px, $tablet-rem), 400);
+    }
+
+    &__desc {
+      @include font(to-rem(17.5px, $tablet-rem), to-rem(21px, $tablet-rem), 300);
+      max-width: 95%;
+      padding-right: 0;
+    }
+
+    &__more-info {
+      align-items: center;
+      display: flex;
+      font-weight: 300;
+      margin: 0;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+
+    &__cta {
+      @include font(to-rem(21px, $tablet-rem), to-rem(25px, $tablet-rem), 700);
+      margin-bottom: to-rem(28px, $tablet-rem);
+    }
+
+    &__buttons {
+      margin: 0 -1.5rem -2rem;
+
+      .zmg-icon {
+        @include font(to-rem(21px, $tablet-rem), to-rem(21px, $tablet-rem));
+      }
+    }
+  }
+
+  @include breakpoint($desktop-breakpoint) {
+    &__glass-background {
+      background: center no-repeat var(--gradient-featured-card-glass-background),
+        calc(-50vw + 650px) -6rem/105vw auto no-repeat url('/assets/images/celebrities/pope-francis.png');
+    }
+
+    &__content {
+      padding: 2rem 1.5rem;
+    }
+
+    &__title {
+      @include font(to-rem(54px, $desktop-rem), 1, 400);
+    }
+
+    &__desc {
+      @include font(to-rem(24px, $desktop-rem), to-rem(29px, $desktop-rem), 300);
+      margin: 2rem 0 1rem;
+      max-width: 80%;
+    }
+
+    &__more-info a {
+      text-decoration: none;
+    }
+
+    &__cta {
+      @include font(to-rem(27px, $desktop-rem), to-rem(32px, $desktop-rem), 700);
+      margin: 1rem 0 2rem;
+    }
+
+    &__buttons {
+      margin: 0 -1.5rem -2rem;
+
+      .icon-button {
+        height: auto;
+      }
+
+      .zmg-icon {
+        @include font(to-rem(36px, $desktop-rem), to-rem(36px, $desktop-rem));
+        display: inline-block;
+        margin: 1.3rem 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+@import 'abstracts';
+
+.banner {
+  background-color: var(--color-banner-main-background);
+  margin: 1rem;
+  padding: 1rem;
+
+  &__left {
+    margin-right: 2rem;
+  }
+
+  &__hairline {
+    color: var(--color-banner-main-hairline);
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: to-rem(-0.94px);
+    white-space: nowrap;
+  }
+
+  &__title {
+    color: var(--color-banner-main-title);
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: to-rem(-0.89px);
+    white-space: nowrap;
+  }
+
+  &__text {
+    color: var(--color-banner-main-text);
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: to-rem(-0.63px);
+    margin: 0;
+    padding-right: 3px;
+  }
+
+  .icon-button {
+    display: none;
+  }
+
+  @include breakpoint($tablet-breakpoint) {
+    margin: 1rem to-rem(20px, $tablet-rem);
+
+    &__right {
+      padding: to-rem(8px, $tablet-rem) 0;
+    }
+
+    &__hairline {
+      font-size: 1rem;
+      letter-spacing: to-rem(-1.13px, $tablet-rem);
+    }
+
+    &__title {
+      font-size: to-rem(21px, $tablet-rem);
+    }
+
+    &__text {
+      font-size: to-rem(18px, $tablet-rem);
+      letter-spacing: to-rem(-0.75px, $tablet-rem);
+    }
+  }
+
+  @include breakpoint($desktop-breakpoint) {
+    margin: 1rem 0;
+
+    &__right {
+      padding: 0;
+    }
+
+    &__text,
+    &__hairline {
+      font-size: 1rem;
+    }
+
+    &__hairline {
+      letter-spacing: to-rem(-1.13px, $desktop-rem);
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      letter-spacing: 0;
+    }
+
+    &__text {
+      letter-spacing: to-rem(-0.75px, $desktop-rem);
+    }
+
+    .icon-button {
+      display: block;
+      font-size: 1rem;
+      margin-left: 2rem;
+    }
+  }
+}

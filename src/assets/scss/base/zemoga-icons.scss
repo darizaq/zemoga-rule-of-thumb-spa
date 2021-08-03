@@ -1,0 +1,59 @@
+@font-face {
+  font-display: block;
+  font-family: 'zemoga-icons';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/assets/fonts/zemoga-icons/zemoga-icons.eot?y7fjk0');
+  src: url('/assets/fonts/zemoga-icons/zemoga-icons.eot?y7fjk0#iefix') format('embedded-opentype'),
+    url('/assets/fonts/zemoga-icons/zemoga-icons.ttf?y7fjk0') format('truetype'),
+    url('/assets/fonts/zemoga-icons/zemoga-icons.woff?y7fjk0') format('woff'),
+    url('/assets/fonts/zemoga-icons/zemoga-icons.svg?y7fjk0#zemoga-icons') format('svg');
+}
+
+.zmg-icon {
+  font-family: 'zemoga-icons' !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: never;
+  text-transform: none;
+
+  &-close::before {
+    content: '\e900';
+  }
+
+  &-facebook::before {
+    content: '\e901';
+  }
+
+  &-hamburger::before {
+    content: '\e902';
+  }
+
+  &-search::before {
+    content: '\e903';
+  }
+
+  &-thumbs-down::before {
+    content: '\e904';
+  }
+
+  &-thumbs-up::before {
+    content: '\e905';
+  }
+
+  &-twitter::before {
+    content: '\e906';
+  }
+
+  &-wikipedia::before {
+    content: '\e907';
+  }
+
+  &-triangle-down::before {
+    content: '\e908';
+  }
+}

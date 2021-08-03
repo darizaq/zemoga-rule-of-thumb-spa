@@ -1,0 +1,30 @@
+<section class="poll" [ngClass]="{ 'poll--big': showBigButtons }">
+  <span class="poll__eyebrow">
+    {{
+      submitted ? ('poll.thanks' | translate) : ('poll.status' | translate: { category: category, timeAgo: timeAgo })
+    }}
+  </span>
+  <div class="poll__buttons">
+    <div *ngIf="!submitted" class="poll__buttons-options">
+      <button
+        class="icon-button icon-button--positive"
+        [attr.aria-label]="'button.thumbsUp' | translate"
+        [ngClass]="{ 'icon-button--active': isPositiveVote && filled }"
+        (click)="fillOutPoll(true)"
+      >
+        <i class="zmg-icon zmg-icon-thumbs-up" aria-hidden="true"></i>
+      </button>
+      <button
+        class="icon-button icon-button--negative"
+        [attr.aria-label]="'button.thumbsDown' | translate"
+        [ngClass]="{ 'icon-button--active': !isPositiveVote && filled }"
+        (click)="fillOutPoll(false)"
+      >
+        <i class="zmg-icon zmg-icon-thumbs-down" aria-hidden="true"></i>
+      </button>
+    </div>
+    <button class="default-button" [disabled]="!filled && !submitted" (click)="voteAction()">
+      {{ (submitted ? 'poll.voteAgain' : 'poll.voteNow') | translate }}
+    </button>
+  </div>
+</section>

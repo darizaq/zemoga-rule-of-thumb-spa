@@ -1,0 +1,86 @@
+@import 'abstracts';
+
+.poll {
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__eyebrow {
+    @include font(to-rem(12px), to-rem(14px), bold);
+    text-align: right;
+  }
+
+  &__buttons {
+    align-items: center;
+    display: inline-flex;
+    justify-content: flex-end;
+    padding: to-rem(12px) 0;
+
+    &-options {
+      display: inline-flex;
+    }
+  }
+
+  .icon-button {
+    font-size: to-rem(16px);
+    height: to-rem(30px);
+    margin-right: to-rem(12px);
+    width: to-rem(30px);
+  }
+
+  @include breakpoint($tablet-breakpoint) {
+    &__eyebrow {
+      @include font(to-rem(12px, $tablet-rem), to-rem(14px, $tablet-rem));
+    }
+
+    &__buttons {
+      padding: to-rem(12px, $tablet-rem) 0;
+    }
+
+    .icon-button {
+      font-size: to-rem(16px, $tablet-rem);
+      height: to-rem(30px, $tablet-rem);
+      margin-right: to-rem(12px, $tablet-rem);
+      width: to-rem(30px, $tablet-rem);
+    }
+  }
+
+  @include breakpoint($desktop-breakpoint) {
+    &__eyebrow {
+      @include font(to-rem(12px, $desktop-rem), to-rem(14px, $desktop-rem));
+    }
+
+    &__buttons {
+      padding: to-rem(12px, $desktop-rem) 0;
+    }
+
+    .icon-button {
+      font-size: to-rem(16px, $desktop-rem);
+      height: to-rem(30px, $desktop-rem);
+      margin-right: to-rem(12px, $desktop-rem);
+      width: to-rem(30px, $desktop-rem);
+    }
+
+    &--big {
+      .poll__eyebrow {
+        @include font(to-rem(15px, $desktop-rem), to-rem(18px, $desktop-rem));
+      }
+
+      .poll__buttons {
+        padding: to-rem(17px, $desktop-rem) 0;
+      }
+
+      .icon-button {
+        font-size: to-rem(24px, $desktop-rem);
+        height: to-rem(45px, $desktop-rem);
+        margin-right: to-rem(10px, $desktop-rem);
+        width: to-rem(45px, $desktop-rem);
+      }
+
+      .default-button {
+        @include font(to-rem(18px, $desktop-rem), to-rem(22px, $desktop-rem));
+        padding: to-rem(11px, $desktop-rem) to-rem(27px, $desktop-rem);
+      }
+    }
+  }
+}

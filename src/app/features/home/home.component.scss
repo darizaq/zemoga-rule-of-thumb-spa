@@ -1,0 +1,13 @@
+@import 'abstracts';
+
+.main-container {
+  min-height: to-rem(350px);
+
+  @include breakpoint($tablet-breakpoint) {
+    min-height: to-rem(500px, $tablet-rem);
+  }
+
+  @include breakpoint($desktop-breakpoint) {
+    min-height: to-rem(600px, $desktop-rem);
+  }
+}

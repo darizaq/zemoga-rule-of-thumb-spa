@@ -1,0 +1,5 @@
+@use 'sass:math';
+
+@function to-rem($value, $base: $mobile-rem) {
+  @return math.div($value, $base) * 1rem;
+}

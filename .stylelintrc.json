@@ -1,0 +1,71 @@
+{
+  "extends": ["stylelint-config-sass-guidelines", "stylelint-config-prettier"],
+  "rules": {
+    "block-closing-brace-empty-line-before": "never",
+    "block-closing-brace-newline-before": "always",
+    "block-no-empty": true,
+    "block-opening-brace-newline-after": "always",
+    "color-hex-case": "lower",
+    "color-hex-length": "long",
+    "declaration-empty-line-before": "never",
+    "indentation": 2,
+    "max-empty-lines": 1,
+    "max-nesting-depth": 5,
+    "order/order": [
+      [
+        {
+          "type": "at-rule",
+          "hasBlock": false
+        },
+        "declarations",
+        "rules",
+        {
+          "type": "at-rule",
+          "hasBlock": true
+        }
+      ]
+    ],
+    "property-case": "lower",
+    "property-no-unknown": true,
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": ["box-orient", "line-clamp"]
+      }
+    ],
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested"],
+        "ignore": ["after-comment"]
+      }
+    ],
+    "shorthand-property-no-redundant-values": true,
+    "selector-class-pattern": [
+      "^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*(?:__[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$",
+      {
+        "message": "Class naming convention doesn't match"
+      }
+    ],
+    "selector-max-empty-lines": 0,
+    "selector-no-qualifying-type": [
+      true,
+      {
+        "ignore": ["attribute", "class", "id"]
+      }
+    ],
+    "selector-pseudo-class-case": "lower",
+    "selector-pseudo-class-parentheses-space-inside": "never",
+    "selector-pseudo-element-case": "lower",
+    "selector-type-case": "lower",
+    "string-quotes": "single",
+    "unit-case": "lower",
+    "unit-no-unknown": true,
+    "value-no-vendor-prefix": [
+      true,
+      {
+        "ignoreValues": ["box"]
+      }
+    ]
+  }
+}

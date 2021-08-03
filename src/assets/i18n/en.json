@@ -1,0 +1,27 @@
+{
+  "button": {
+    "thumbsUp": "thumbs up",
+    "thumbsDown": "thumbs down"
+  },
+  "errorMessage": {
+    "default": "An error has occurred!"
+  },
+  "notFound": {
+    "message": "There's nothing to see here :("
+  },
+  "poll": {
+    "status": "{{timeAgo}} in {{category}}",
+    "thanks": "Thank you for your vote!",
+    "voteAgain": "Vote Again",
+    "voteNow": "Vote Now"
+  },
+  "rulingCard": {
+    "imageAlt": "{{name}} picture"
+  },
+  "rulings": {
+    "previous": "Previous Rulings"
+  },
+  "select": {
+    "items": "Items"
+  }
+}

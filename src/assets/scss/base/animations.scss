@@ -1,0 +1,28 @@
+.jump-animation {
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: jump;
+  animation-timing-function: ease;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(-50px);
+  }
+
+  60% {
+    transform: translateY(0);
+  }
+
+  80% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
